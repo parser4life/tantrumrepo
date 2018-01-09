@@ -27,15 +27,11 @@
   </extension>
 </addon>
 
-<addon id="plugin.program.advancedsettings"
-       name="Easy Advanced Settings"
-       version="0.8.9"
-       provider-name="kinkin">
+<addon id="plugin.program.advancedsettings" name="Easy Advanced Settings" version="0.8.9" provider-name="kinkin">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
     </requires>
-    <extension point="xbmc.python.pluginsource"
-               	library="default.py">
+    <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -50,7 +46,6 @@
         <source></source>
         <email></email>
     </extension>
-
 </addon>
 
 <addon id="plugin.program.apkwizard" name="[COLOR springgreen][B]Tantrum[/B][/COLOR] [COLOR snow][B]APK Wizard[/B][/COLOR]" version="0.0.5" provider-name="MuadDib">
@@ -418,35 +413,7 @@
   </extension>
 </addon>
 
-<addon id="script.module.trakt"
-       name="trakt.py"
-       version="2.14.1"
-       provider-name="Fuzeman, Razzeee">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.requests" version="2.12.4"/>
-	<import addon="script.module.six" version="1.9.0"/>
-	<import addon="script.module.arrow" version="0.6.0"/>
-  </requires>
-  <extension point="xbmc.python.module"
-             library="lib" />
-  <extension point="xbmc.addon.metadata">
-    <summary>Python interface for the trakt.tv API</summary>
-    <description>Packed for Kodi from https://github.com/fuzeman/trakt.py</description>
-    <platform>all</platform>
-    <language></language>
-    <license>MIT</license>
-    <forum></forum>
-    <website>https://github.com/fuzeman/trakt.py</website>
-    <source>https://github.com/Razzeee/script.module.trakt</source>
-    <email></email>
-  </extension>
-</addon>
-
-<addon id="script.module.urllib3"
-       name="urllib3"
-       version="1.22"
-       provider-name="shazow">
+<addon id="script.module.urllib3" name="urllib3" version="1.22" provider-name="shazow">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
   </requires>
@@ -466,43 +433,20 @@
 </addon>
 
 <addon id="script.module.urlresolver" name="URLResolver" version="4.0.16" provider-name="Eldorado, tknorris, tvaddons">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0" />
-		<import addon="plugin.video.youtube" optional="true" />
-		<import addon="script.module.python.twitch" optional="true" />
-		<import addon="script.module.cryptopy" version="1.2.6" optional="true" />
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.python.pluginsource" library="lib/default.py" />
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<summary lang="en">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
-		<summary lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju.</summary>
-		<description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
-		<description lang="hr">Prilagodi najčešće URL-ove video izvora kako bi radili u XBMC/Kodiju, pojednostavnjuje razvoj priključaka za video dodatke koji zahtjevaju višestruke video izvore.</description>
-        <forum>https://www.tvaddons.co/forums</forum>
-        <website>https://www.tvaddons.co</website>
-	</extension>
-</addon>
-
-<addon id="script.module.youtube.dl" name="youtube-dl Control" version="17.1231.0" provider-name="Rick Phillips (ruuk)">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
-        <import addon="script.module.addon.signals" version="0.0.1"/>
+        <import addon="plugin.video.youtube" optional="true" />
+        <import addon="script.module.python.twitch" optional="true" />
+        <import addon="script.module.cryptopy" version="1.2.6" optional="true" />
     </requires>
-    <extension point="xbmc.python.script" library="control.py">
-        <provides>executable</provides>
-    </extension>
     <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="lib/default.py" />
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
-        <summary lang="en">Module providing access to youtube-dl video stream extraction</summary>
-        <description lang="en">Module providing access to youtube-dl video stream extraction for hundreds of sites. Version is based on youtube-dl date version: YY.MDD.V where V is the addon specific sub-version. Also provides downloading with the option for background downloading with a queue and queue manager.</description>
-        <summary lang="es">Módulo que proporciona acceso a YouTube-dl para la extracción de flujos de video</summary>
-        <description lang="en">Módulo que proporciona acceso a YouTube-dl para la extracción de flujos de video de cientos de sitios. La versión está basada en la versión de fecha youtube-dl: YY.MDD.V donde V es la subversión específica del complemento. También permite descargas con la opción de descarga en segundo plano con una cola y un administrador de colas.</description>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <forum>http://forum.xbmc.org/showthread.php?tid=200877</forum>
-        <source>http://github.com/ruuk/script.module.youtube.dl</source>
+        <summary lang="en">Resolve common video host URL's to be playable in XBMC/Kodi.</summary>
+        <description lang="en">Resolve common video host URL's to be playable in XBMC/Kodi, simplify addon development of video plugins requiring multi video hosts.</description>
+        <forum>https://www.tvaddons.co/forums</forum>
+        <website>https://www.tvaddons.co</website>
     </extension>
 </addon>
 
@@ -522,33 +466,33 @@
 </addon>
 
 <addon id="service.library.data.provider" name="Library Data Provider" provider-name="BigNoid" version="0.3.0">
-	<requires>
-		<import addon="xbmc.json" version="7.9.0"/>
-		<import addon="xbmc.python" version="2.25.0"/>
-		<import addon="script.module.simplejson" version="3.3.0"/>
-		<import addon="script.module.routing" version="0.1.0"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="plugin.py">
-		<provides>video</provides>
-	</extension>
-	<extension library="service.py" point="xbmc.service" start="login" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Browse movies and episodes in a variety of sorted playlists.</summary>
-		<description lang="en">Plugin for skins to provide library data throughout the skin. It can also be used as standalone plugin to browse the playlists in the video library.</description>
-		<disclaimer lang="en" />
-		<platform>all</platform>
-		<language />
-		<license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
-		<forum>http://forum.kodi.tv/showthread.php?tid=210063</forum>
-		<website>https://github.com/BigNoid/service.library.data.provider</website>
-		<email>big.noid@kodi.tv</email>
-		<source>https://github.com/BigNoid/service.library.data.provider</source>
-		<news>Fixed playlist statistics</news>
-		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
-		</assets>
-	</extension>
+    <requires>
+        <import addon="xbmc.json" version="7.9.0"/>
+        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="script.module.simplejson" version="3.3.0"/>
+        <import addon="script.module.routing" version="0.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+        <provides>video</provides>
+    </extension>
+    <extension library="service.py" point="xbmc.service" start="login" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Browse movies and episodes in a variety of sorted playlists.</summary>
+        <description lang="en">Plugin for skins to provide library data throughout the skin. It can also be used as standalone plugin to browse the playlists in the video library.</description>
+        <disclaimer lang="en" />
+        <platform>all</platform>
+        <language />
+        <license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
+        <forum>http://forum.kodi.tv/showthread.php?tid=210063</forum>
+        <website>https://github.com/BigNoid/service.library.data.provider</website>
+        <email>big.noid@kodi.tv</email>
+        <source>https://github.com/BigNoid/service.library.data.provider</source>
+        <news>Fixed playlist statistics</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>
 
 <addon id="skin.aeon.nox.destiny" version="0.0.1" name="Aeon Nox 5: Destiny" provider-name="MuadDib">
