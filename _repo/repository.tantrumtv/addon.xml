@@ -7,8 +7,8 @@
             <hashes>false</hashes>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Tantrum.TV Offical Repository</summary>
-            <description>Tantrum.TV Offical Repository</description>
+            <summary>Tantrum.TV Official Repository</summary>
+            <description>Tantrum.TV Official Repository</description>
             <platform>all</platform>
     </extension>
 </addon>

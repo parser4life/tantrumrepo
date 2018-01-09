@@ -162,9 +162,9 @@
 </addon>
 
 <addon id="plugin.video.tantrumtvchannel"
-	name="Tantrum.TV Videos"
-	version="1.0.1"
-	provider-name="MuadDib">
+    name="Tantrum.TV Videos"
+    version="1.0.1"
+    provider-name="MuadDib">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.addon.common" version="2.0.0"/>
@@ -191,36 +191,36 @@
             <hashes>false</hashes>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Tantrum.TV Offical Repository</summary>
-            <description>Tantrum.TV Offical Repository</description>
+            <summary>Tantrum.TV Official Repository</summary>
+            <description>Tantrum.TV Official Repository</description>
             <platform>all</platform>
     </extension>
 </addon>
 
 <addon id="resource.images.tantrumicons" name="Tantrum.TV Icon Collection" version="1.0.3" provider-name="MuadDib">
-	<extension point="kodi.resource.images" compile="false" type="icons" />
-	<requires>
-		<import addon="kodi.resource" version="1.0.0"/>
-	</requires>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Tantrum.TV Icon Image Set</summary>
-		<description lang="en">This is an image set used by the Tantrum.TV Themes</description>
+    <extension point="kodi.resource.images" compile="false" type="icons" />
+    <requires>
+        <import addon="kodi.resource" version="1.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Tantrum.TV Icon Image Set</summary>
+        <description lang="en">This is an image set used by the Tantrum.TV Themes</description>
         <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
-		<platform>all</platform>
-	</extension>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="resource.images.weatherfanart.tantrum" name="Tantrum.TV Weather Fanart" version="1.0.0" provider-name="MuadDib">
-	<extension point="kodi.resource.images" compile="false" type="weather" />
-	<requires>
-		<import addon="kodi.resource" version="1.0.0"/>
-	</requires>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Tantrum.TV Weather Image Set</summary>
-		<description lang="en">This is an image set to replace the default weather icons/images used in Kodi</description>
+    <extension point="kodi.resource.images" compile="false" type="weather" />
+    <requires>
+        <import addon="kodi.resource" version="1.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Tantrum.TV Weather Image Set</summary>
+        <description lang="en">This is an image set to replace the default weather icons/images used in Kodi</description>
         <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
-		<platform>all</platform>
-	</extension>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="script.grab.fanart"
@@ -235,7 +235,7 @@
     <description lang="en">Uses the Kodi database to grab all fanart from media items and put it into a skin property for use by skins/slideshows as previous version of XBMC allowed.</description>
     <forum>http://forum.kodi.tv/showthread.php?tid=166572</forum>
     <source>https://github.com/robweber/script.grab.fanart</source>
-	<website>https://github.com/robweber/script.grab.fanart</website>
+    <website>https://github.com/robweber/script.grab.fanart</website>
     <license>The MIT License</license>
     <platform>all</platform>
     <language></language>
@@ -243,35 +243,35 @@
 </addon>
 
 <addon id="script.image.resource.select" name="Image Resource Select Addon" version="2.0.2" provider-name="ronie">
-	<requires>
-		<import addon="xbmc.python" version="2.25.0"/>
-	</requires>
-	<extension point="xbmc.python.library" library="default.py"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Image resource selection addon</summary>
-		<description lang="en">Script for skinners to let users select an image resource addon.</description>
-		<language></language>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE Version 2</license>
-		<forum>http://forum.kodi.tv/showthread.php?tid=239558</forum>
-		<website></website>
-		<email></email>
-		<source>https://github.com/ronie/script.image.resource.select</source>
-	</extension>
+    <requires>
+        <import addon="xbmc.python" version="2.25.0"/>
+    </requires>
+    <extension point="xbmc.python.library" library="default.py"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Image resource selection addon</summary>
+        <description lang="en">Script for skinners to let users select an image resource addon.</description>
+        <language></language>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE Version 2</license>
+        <forum>http://forum.kodi.tv/showthread.php?tid=239558</forum>
+        <website></website>
+        <email></email>
+        <source>https://github.com/ronie/script.image.resource.select</source>
+    </extension>
 </addon>
 
 <addon id="script.module.addon.signals"
-	name="Addon Signals"
-	version="0.0.3"
-	provider-name="Rick Phillips (ruuk)">
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Inter-addon signalling</summary>
-		<description lang="en">Provides signal/slot mechanism for inter-addon communication</description>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE Version 2.1, February 1999</license>
-		<source>https://github.com/ruuk/script.module.addon.signals</source>
-	</extension>
+    name="Addon Signals"
+    version="0.0.3"
+    provider-name="Rick Phillips (ruuk)">
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Inter-addon signalling</summary>
+        <description lang="en">Provides signal/slot mechanism for inter-addon communication</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE Version 2.1, February 1999</license>
+        <source>https://github.com/ruuk/script.module.addon.signals</source>
+    </extension>
 </addon>
 
 <addon id="script.module.certifi"
@@ -496,118 +496,118 @@
 </addon>
 
 <addon id="skin.aeon.nox.destiny" version="0.0.1" name="Aeon Nox 5: Destiny" provider-name="MuadDib">
-	<requires>
-		<import addon="xbmc.gui" version="5.12.0"/>
-		<import addon="script.grab.fanart" version="0.12.8"/>
-		<import addon="script.skinshortcuts" version="1.0.10"/>
-		<import addon="service.library.data.provider" version="0.0.7"/>
-		<import addon="resource.images.studios.white" version="0.0.1"/>
-		<import addon="resource.images.recordlabels.white" version="0.0.1"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="0.75">
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Created by BigNoid, Modded by SiLVO and MuadDib, and Widgets by Mr. V</summary>
-		<description>Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
-		<forum></forum>
-		<website></website>
-		<source></source>
-		<news>[B]Based on [I]v5.9.4[/I] of Aeon Nox 5[/B] plus Silvo's fixes and customizations</news>
-		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
-		</assets>
-	</extension>
+    <requires>
+        <import addon="xbmc.gui" version="5.12.0"/>
+        <import addon="script.grab.fanart" version="0.12.8"/>
+        <import addon="script.skinshortcuts" version="1.0.10"/>
+        <import addon="service.library.data.provider" version="0.0.7"/>
+        <import addon="resource.images.studios.white" version="0.0.1"/>
+        <import addon="resource.images.recordlabels.white" version="0.0.1"/>
+    </requires>
+    <extension point="xbmc.gui.skin" debugging="false" effectslowdown="0.75">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Created by BigNoid, Modded by SiLVO and MuadDib, and Widgets by Mr. V</summary>
+        <description>Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
+        <forum></forum>
+        <website></website>
+        <source></source>
+        <news>[B]Based on [I]v5.9.4[/I] of Aeon Nox 5[/B] plus Silvo's fixes and customizations</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>
 
 <addon id="skin.aeon.nox.dragon" version="0.0.2" name="Aeon Nox 5: Dragon" provider-name="MuadDib">
-	<requires>
-		<import addon="xbmc.gui" version="5.12.0"/>
-		<import addon="script.grab.fanart" version="0.12.8"/>
-		<import addon="script.skinshortcuts" version="1.0.10"/>
-		<import addon="service.library.data.provider" version="0.0.7"/>
-		<import addon="resource.images.studios.white" version="0.0.1"/>
-		<import addon="resource.images.recordlabels.white" version="0.0.1"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="0.75">
-		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Created by BigNoid, Modded by SiLVO and MuadDib, and Widgets by Mr. V</summary>
-		<description>Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
-		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
-		<forum></forum>
-		<website></website>
-		<source></source>
-		<news>[B]Based on [I]v5.9.4[/I] of Aeon Nox 5[/B] plus Silvo's fixes and customizations</news>
-		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
-		</assets>
-	</extension>
+    <requires>
+        <import addon="xbmc.gui" version="5.12.0"/>
+        <import addon="script.grab.fanart" version="0.12.8"/>
+        <import addon="script.skinshortcuts" version="1.0.10"/>
+        <import addon="service.library.data.provider" version="0.0.7"/>
+        <import addon="resource.images.studios.white" version="0.0.1"/>
+        <import addon="resource.images.recordlabels.white" version="0.0.1"/>
+    </requires>
+    <extension point="xbmc.gui.skin" debugging="false" effectslowdown="0.75">
+        <res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Created by BigNoid, Modded by SiLVO and MuadDib, and Widgets by Mr. V</summary>
+        <description>Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
+        <forum></forum>
+        <website></website>
+        <source></source>
+        <news>[B]Based on [I]v5.9.4[/I] of Aeon Nox 5[/B] plus Silvo's fixes and customizations</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>
 
 <addon id="skin.tantrumlightred" version="1.4.4" name="Tantrum.TV Light Red" provider-name="MuadDib, Jezz_X, Team Kodi">
-	<requires>
-		<import addon="xbmc.gui" version="5.12.0"/>
-		<import addon="resource.images.weatherfanart.tantrum" version="1.0.0"/>
-		<import addon="resource.images.tantrumicons" version="1.0.3"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
-		<res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Tantrum.TV Skin, ported from Confluence</summary>
-		<description lang="en">Tantrum.TV Red Skin, ported from Confluence. This is designed specifically for our standard build.</description>
-		<disclaimer lang="en">For help and support ... Please visit our group on Facebook!</disclaimer>
-		<platform>all</platform>
-		<license>GNU General Public License version 2</license>
-		<forum>https://www.facebook.com/groups/1709673909327662/</forum>
-		<website>http://www.tantrumtv.com</website>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
-			<screenshot>resources/screenshot-01.jpg</screenshot>
-			<screenshot>resources/screenshot-02.jpg</screenshot>
-			<screenshot>resources/screenshot-03.jpg</screenshot>
-			<screenshot>resources/screenshot-04.jpg</screenshot>
-		</assets>
-		<news></news>
-	</extension>
+    <requires>
+        <import addon="xbmc.gui" version="5.12.0"/>
+        <import addon="resource.images.weatherfanart.tantrum" version="1.0.0"/>
+        <import addon="resource.images.tantrumicons" version="1.0.3"/>
+    </requires>
+    <extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
+        <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Tantrum.TV Skin, ported from Confluence</summary>
+        <description lang="en">Tantrum.TV Red Skin, ported from Confluence. This is designed specifically for our standard build.</description>
+        <disclaimer lang="en">For help and support ... Please visit our group on Facebook!</disclaimer>
+        <platform>all</platform>
+        <license>GNU General Public License version 2</license>
+        <forum>https://www.facebook.com/groups/1709673909327662/</forum>
+        <website>http://www.tantrumtv.com</website>
+        <email/>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+            <screenshot>resources/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshot-03.jpg</screenshot>
+            <screenshot>resources/screenshot-04.jpg</screenshot>
+        </assets>
+        <news></news>
+    </extension>
 </addon>
 
 <addon id="skin.tantrumlightreda" version="1.4.4" name="Tantrum.TV Light Red (Adult)" provider-name="MuadDib, Jezz_X, Team Kodi">
-	<requires>
-		<import addon="xbmc.gui" version="5.12.0"/>
-		<import addon="resource.images.weatherfanart.tantrum" version="1.0.0"/>
-		<import addon="resource.images.tantrumicons" version="1.0.3"/>
-	</requires>
-	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
-		<res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Tantrum.TV Skin, ported from Confluence</summary>
-		<description lang="en">Tantrum.TV Red Skin, ported from Confluence. This is designed specifically for our Adult Build</description>
-		<disclaimer lang="en">For help and support ... Please visit our group on Facebook!</disclaimer>
-		<platform>all</platform>
-		<license>GNU General Public License version 2</license>
-		<forum>https://www.facebook.com/groups/1709673909327662/</forum>
-		<website>http://www.tantrumtv.com</website>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-			<fanart>resources/fanart.jpg</fanart>
-			<screenshot>resources/screenshot-01.jpg</screenshot>
-			<screenshot>resources/screenshot-02.jpg</screenshot>
-			<screenshot>resources/screenshot-03.jpg</screenshot>
-			<screenshot>resources/screenshot-04.jpg</screenshot>
-		</assets>
-		<news></news>
-	</extension>
+    <requires>
+        <import addon="xbmc.gui" version="5.12.0"/>
+        <import addon="resource.images.weatherfanart.tantrum" version="1.0.0"/>
+        <import addon="resource.images.tantrumicons" version="1.0.3"/>
+    </requires>
+    <extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
+        <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Tantrum.TV Skin, ported from Confluence</summary>
+        <description lang="en">Tantrum.TV Red Skin, ported from Confluence. This is designed specifically for our Adult Build</description>
+        <disclaimer lang="en">For help and support ... Please visit our group on Facebook!</disclaimer>
+        <platform>all</platform>
+        <license>GNU General Public License version 2</license>
+        <forum>https://www.facebook.com/groups/1709673909327662/</forum>
+        <website>http://www.tantrumtv.com</website>
+        <email/>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+            <screenshot>resources/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshot-03.jpg</screenshot>
+            <screenshot>resources/screenshot-04.jpg</screenshot>
+        </assets>
+        <news></news>
+    </extension>
 </addon>
 </addons>
