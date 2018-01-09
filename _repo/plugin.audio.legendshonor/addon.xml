@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.audio.legendshonor" name="Legends" version="0.0.2" provider-name="MuadDib">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="plugin.video.youtube"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Legends showcases videos for musicians who have passed on.</summary>
+    <description lang="en">Legends showcases videos for musicians who have passed on.</description>
+    <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
+    <language>en</language>
+    <platform>all</platform>
+    <license>Beerware rev. 42</license>
+    <forum>http://www.tantrumtv.com</forum>
+    <website>http://www.tantrumtv.com</website>
+    <source></source>
+    <news>Content is constantly updated, without the need for addon updates.</news>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot></screenshot>
+    </assets>
+  </extension>
+</addon>

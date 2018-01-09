@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <addon id="repository.tantrumtv" name="Tantrum.TV Repository" version="1.0.1" provider-name="MuadDib">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="Tantrum.TV Repository">
+            <info compressed="false">https://raw.githubusercontent.com/muaddibttv/tantrumrepo/master/_repo/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/muaddibttv/tantrumrepo/master/_repo/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/muaddibttv/tantrumrepo/master/_repo/</datadir>
+            <hashes>false</hashes>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Tantrum.TV Offical Repository</summary>
+            <description>Tantrum.TV Offical Repository</description>
+            <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
+            <platform>all</platform>
+    </extension>
+</addon>

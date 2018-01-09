@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.program.tantrumcleaner" name="[COLOR red][B]Tantrum.TV [/B][/COLOR][COLOR snow][B]Auto Cleaner[/B][/COLOR]" version="1.4.0" provider-name="MuadDib">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="startup.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Auto Cleaner By MuadDib</summary>
+    <description lang="en">This has been set up to auto clean your Kodi install, this can be changed via the add-on settings.</description>
+    <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
+    <platform>all</platform>
+    <news>v1.4.0 - Added stacktrace files to the Crash Log File cleanup.</news>
+  </extension>
+</addon>
