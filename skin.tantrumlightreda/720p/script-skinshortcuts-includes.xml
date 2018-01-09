@@ -1,0 +1,1847 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<includes>
+	<include name="skinshortcuts-mainmenu" />
+	<include />
+	<include name="skinshortcuts-submenu">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">2</property>
+			<label>Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmovies.png/</thumb>
+			<property name="labelID">movies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movieNavigator</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">2</property>
+			<label>New Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5clatest-movies.png/</thumb>
+			<property name="labelID">newmovies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieWidget",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieWidget",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movieWidget</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">2</property>
+			<label>Most Popular</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmost-popular.png/</thumb>
+			<property name="labelID">mostpopular</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=popular",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=popular",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movies&amp;url=popular</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">2</property>
+			<label>People Watching</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cpeople-watching.png/</thumb>
+			<property name="labelID">peoplewatching</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=trending",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=trending",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movies&amp;url=trending</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">2</property>
+			<label>My Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmymovies.png/</thumb>
+			<property name="labelID">mymovies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mymovieNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mymovieNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=mymovieNavigator</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">2</property>
+			<label>Kid's Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.kmER%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.kmER</property>
+			<property name="defaultID">plugin.video.kmER</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.kmER",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.kmER",return)</property>
+			<property name="list">plugin://plugin.video.kmER</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">2</property>
+			<label>Movies About Music</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.moviesaboutmusic%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.moviesaboutmusic</property>
+			<property name="defaultID">plugin.video.moviesaboutmusic</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.moviesaboutmusic",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.moviesaboutmusic",return)</property>
+			<property name="list">plugin://plugin.video.moviesaboutmusic</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Radio</label>
+			<label2>Music Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.audio.radio_de%5cicon.png/</thumb>
+			<property name="labelID">plugin.audio.radio_de</property>
+			<property name="defaultID">plugin.audio.radio_de</property>
+			<onclick>ActivateWindow(Music,"plugin://plugin.audio.radio_de",return)</onclick>
+			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.radio_de",return)</property>
+			<property name="list">plugin://plugin.audio.radio_de</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[133]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">133</property>
+			<property name="defaultID">133</property>
+			<visible>[Library.HasContent(Music)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<onclick>ActivateWindow(Music,musicdb://artists/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://artists/,return)</property>
+			<property name="list">musicdb://artists/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[132]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">132</property>
+			<property name="defaultID">132</property>
+			<visible>[Library.HasContent(Music)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<onclick>ActivateWindow(Music,musicdb://albums/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://albums/,return)</property>
+			<property name="list">musicdb://albums/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[134]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">134</property>
+			<property name="defaultID">134</property>
+			<visible>[Library.HasContent(Music)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<onclick>ActivateWindow(Music,musicdb://songs/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://songs/,return)</property>
+			<property name="list">musicdb://songs/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[744]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick>ActivateWindow(Music,sources://music/,return)</onclick>
+			<property name="path">ActivateWindow(Music,sources://music/,return)</property>
+			<property name="list">sources://music/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[24001]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">24001</property>
+			<property name="defaultID">24001</property>
+			<onclick>ActivateWindow(Music,addons://sources/audio/,return)</onclick>
+			<property name="path">ActivateWindow(Music,addons://sources/audio/,return)</property>
+			<property name="list">addons://sources/audio/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">11</property>
+			<label>$LOCALIZE[4]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">4</property>
+			<property name="defaultID">4</property>
+			<visible>[System.HasAddon(script.tv.show.next.aired)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<onclick>RunAddon(script.tv.show.next.aired,return)</onclick>
+			<property name="path">RunAddon(script.tv.show.next.aired,return)</property>
+			<property name="list">RunAddon(script.tv.show.next.aired,return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">11</property>
+			<label>TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5ctvshows.png/</thumb>
+			<property name="labelID">tvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvNavigator</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">11</property>
+			<label>My TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmytvshows.png/</thumb>
+			<property name="labelID">mytvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mytvNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mytvNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=mytvNavigator</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">11</property>
+			<label>Most Popular</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmost-popular.png/</thumb>
+			<property name="labelID">mostpopular</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=popular",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=popular",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=popular</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">11</property>
+			<label>People Watching</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cpeople-watching.png/</thumb>
+			<property name="labelID">peoplewatching</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=trending",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=trending",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=trending</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">11</property>
+			<label>New TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cnew-tvshows.png/</thumb>
+			<property name="labelID">newtvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">11</property>
+			<label>New Episodes</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5clatest-episodes.png/</thumb>
+			<property name="labelID">newepisodes</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvWidget",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvWidget",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvWidget</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Cache</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearcache</property>
+			<property name="defaultID">135</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Thumbnails</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearthumbnails</property>
+			<property name="defaultID">31328</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Logs</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearlogs</property>
+			<property name="defaultID">652</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Packages</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearpackages</property>
+			<property name="defaultID">20459</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">13</property>
+			<label>All Add-ons</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">alladd-ons</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(AddonBrowser)</onclick>
+			<property name="path">ActivateWindow(AddonBrowser)</property>
+			<property name="list">AddonBrowser</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">14</property>
+			<label>NBA Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fbethub.org%2fwp-content%2fuploads%2f2015%2f09%2fNBA_Logo_.png/</thumb>
+			<property name="labelID">nbagames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">14</property>
+			<label>NHL Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://https%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fde%2fthumb%2f1%2f19%2fLogo-NHL.svg%2f2000px-Logo-NHL.svg.png/</thumb>
+			<property name="labelID">nhlgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">14</property>
+			<label>NFL Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fwww.shermanreport.com%2fwp-content%2fuploads%2f2012%2f06%2fNFL-Logo1.gif/</thumb>
+			<property name="labelID">nflgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">14</property>
+			<label>MLB Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fcontent.sportslogos.net%2flogos%2f4%2f490%2ffull%2f1986.gif/</thumb>
+			<property name="labelID">mlbgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">14</property>
+			<label>SportsDevil</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.SportsDevil%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.SportsDevil</property>
+			<property name="defaultID">plugin.video.SportsDevil</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.SportsDevil",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.SportsDevil",return)</property>
+			<property name="list">plugin://plugin.video.SportsDevil</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">16</property>
+			<label>Cartoons8</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.cartoons8%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.cartoons8</property>
+			<property name="defaultID">plugin.video.cartoons8</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.cartoons8",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.cartoons8",return)</property>
+			<property name="list">plugin://plugin.video.cartoons8</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">16</property>
+			<label>Disney Junior</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.disneyjunior%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.disneyjunior</property>
+			<property name="defaultID">plugin.video.disneyjunior</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.disneyjunior",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.disneyjunior",return)</property>
+			<property name="list">plugin://plugin.video.disneyjunior</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">16</property>
+			<label>Adult Swim</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.adultswim%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.adultswim</property>
+			<property name="defaultID">plugin.video.adultswim</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.adultswim",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.adultswim",return)</property>
+			<property name="list">plugin://plugin.video.adultswim</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">16</property>
+			<label>ToonMania</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.toonmania%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.toonmania</property>
+			<property name="defaultID">plugin.video.toonmania</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.toonmania",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.toonmania",return)</property>
+			<property name="list">plugin://plugin.video.toonmania</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">16</property>
+			<label>WatchCartoonOnline</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.watchcartoon_gw%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.watchcartoon_gw</property>
+			<property name="defaultID">plugin.video.watchcartoon_gw</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.watchcartoon_gw",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.watchcartoon_gw",return)</property>
+			<property name="list">plugin://plugin.video.watchcartoon_gw</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">17</property>
+			<label>Planet MMA</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.ufc-finest%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.ufc-finest</property>
+			<property name="defaultID">plugin.video.ufc-finest</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.ufc-finest",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.ufc-finest",return)</property>
+			<property name="list">plugin://plugin.video.ufc-finest</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x404)</visible>
+			<property name="group">x404</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-x1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x1">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x2">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">2</property>
+			<label>Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmovies.png/</thumb>
+			<property name="labelID">movies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movieNavigator</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">2</property>
+			<label>New Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5clatest-movies.png/</thumb>
+			<property name="labelID">newmovies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieWidget",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieWidget",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movieWidget</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">2</property>
+			<label>Most Popular</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmost-popular.png/</thumb>
+			<property name="labelID">mostpopular</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=popular",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=popular",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movies&amp;url=popular</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">2</property>
+			<label>People Watching</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cpeople-watching.png/</thumb>
+			<property name="labelID">peoplewatching</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=trending",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=trending",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movies&amp;url=trending</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">2</property>
+			<label>My Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmymovies.png/</thumb>
+			<property name="labelID">mymovies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mymovieNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mymovieNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=mymovieNavigator</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">2</property>
+			<label>Kid's Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.kmER%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.kmER</property>
+			<property name="defaultID">plugin.video.kmER</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.kmER",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.kmER",return)</property>
+			<property name="list">plugin://plugin.video.kmER</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">2</property>
+			<label>Movies About Music</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.moviesaboutmusic%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.moviesaboutmusic</property>
+			<property name="defaultID">plugin.video.moviesaboutmusic</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.moviesaboutmusic",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.moviesaboutmusic",return)</property>
+			<property name="list">plugin://plugin.video.moviesaboutmusic</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-x2">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">2</property>
+			<label>Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmovies.png/</thumb>
+			<property name="labelID">movies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movieNavigator</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">2</property>
+			<label>New Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5clatest-movies.png/</thumb>
+			<property name="labelID">newmovies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieWidget",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movieWidget",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movieWidget</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">2</property>
+			<label>Most Popular</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmost-popular.png/</thumb>
+			<property name="labelID">mostpopular</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=popular",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=popular",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movies&amp;url=popular</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">2</property>
+			<label>People Watching</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cpeople-watching.png/</thumb>
+			<property name="labelID">peoplewatching</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=trending",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=movies&amp;url=trending",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=movies&amp;url=trending</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">2</property>
+			<label>My Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmymovies.png/</thumb>
+			<property name="labelID">mymovies</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mymovieNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mymovieNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=mymovieNavigator</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">2</property>
+			<label>Kid's Movies</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.kmER%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.kmER</property>
+			<property name="defaultID">plugin.video.kmER</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.kmER",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.kmER",return)</property>
+			<property name="list">plugin://plugin.video.kmER</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">2</property>
+			<label>Movies About Music</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.moviesaboutmusic%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.moviesaboutmusic</property>
+			<property name="defaultID">plugin.video.moviesaboutmusic</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.moviesaboutmusic",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.moviesaboutmusic",return)</property>
+			<property name="list">plugin://plugin.video.moviesaboutmusic</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x2)</visible>
+			<property name="group">x2</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-x3">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Radio</label>
+			<label2>Music Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.audio.radio_de%5cicon.png/</thumb>
+			<property name="labelID">plugin.audio.radio_de</property>
+			<property name="defaultID">plugin.audio.radio_de</property>
+			<onclick>ActivateWindow(Music,"plugin://plugin.audio.radio_de",return)</onclick>
+			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.radio_de",return)</property>
+			<property name="list">plugin://plugin.audio.radio_de</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[133]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">133</property>
+			<property name="defaultID">133</property>
+			<visible>Library.HasContent(Music)</visible>
+			<onclick>ActivateWindow(Music,musicdb://artists/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://artists/,return)</property>
+			<property name="list">musicdb://artists/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[132]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">132</property>
+			<property name="defaultID">132</property>
+			<visible>Library.HasContent(Music)</visible>
+			<onclick>ActivateWindow(Music,musicdb://albums/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://albums/,return)</property>
+			<property name="list">musicdb://albums/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[134]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">134</property>
+			<property name="defaultID">134</property>
+			<visible>Library.HasContent(Music)</visible>
+			<onclick>ActivateWindow(Music,musicdb://songs/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://songs/,return)</property>
+			<property name="list">musicdb://songs/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[744]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick>ActivateWindow(Music,sources://music/,return)</onclick>
+			<property name="path">ActivateWindow(Music,sources://music/,return)</property>
+			<property name="list">sources://music/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[24001]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">24001</property>
+			<property name="defaultID">24001</property>
+			<onclick>ActivateWindow(Music,addons://sources/audio/,return)</onclick>
+			<property name="path">ActivateWindow(Music,addons://sources/audio/,return)</property>
+			<property name="list">addons://sources/audio/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-x3">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">3</property>
+			<label>Radio</label>
+			<label2>Music Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.audio.radio_de%5cicon.png/</thumb>
+			<property name="labelID">plugin.audio.radio_de</property>
+			<property name="defaultID">plugin.audio.radio_de</property>
+			<onclick>ActivateWindow(Music,"plugin://plugin.audio.radio_de",return)</onclick>
+			<property name="path">ActivateWindow(Music,"plugin://plugin.audio.radio_de",return)</property>
+			<property name="list">plugin://plugin.audio.radio_de</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x3)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[133]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">133</property>
+			<property name="defaultID">133</property>
+			<visible>[Library.HasContent(Music)] + String.IsEqual(Window(10000).Property(submenuVisibility),x3)</visible>
+			<onclick>ActivateWindow(Music,musicdb://artists/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://artists/,return)</property>
+			<property name="list">musicdb://artists/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[132]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">132</property>
+			<property name="defaultID">132</property>
+			<visible>[Library.HasContent(Music)] + String.IsEqual(Window(10000).Property(submenuVisibility),x3)</visible>
+			<onclick>ActivateWindow(Music,musicdb://albums/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://albums/,return)</property>
+			<property name="list">musicdb://albums/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[134]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">134</property>
+			<property name="defaultID">134</property>
+			<visible>[Library.HasContent(Music)] + String.IsEqual(Window(10000).Property(submenuVisibility),x3)</visible>
+			<onclick>ActivateWindow(Music,musicdb://songs/,return)</onclick>
+			<property name="path">ActivateWindow(Music,musicdb://songs/,return)</property>
+			<property name="list">musicdb://songs/</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[744]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">744</property>
+			<property name="defaultID">744</property>
+			<onclick>ActivateWindow(Music,sources://music/,return)</onclick>
+			<property name="path">ActivateWindow(Music,sources://music/,return)</property>
+			<property name="list">sources://music/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x3)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">3</property>
+			<label>$LOCALIZE[24001]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">24001</property>
+			<property name="defaultID">24001</property>
+			<onclick>ActivateWindow(Music,addons://sources/audio/,return)</onclick>
+			<property name="path">ActivateWindow(Music,addons://sources/audio/,return)</property>
+			<property name="list">addons://sources/audio/</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x3)</visible>
+			<property name="group">x3</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-x4">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x4">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x5">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x5">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x6">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x6">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x7">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x7">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x8">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x8">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x9">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x9">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x10">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x10">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x11">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">11</property>
+			<label>$LOCALIZE[4]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">4</property>
+			<property name="defaultID">4</property>
+			<visible>System.HasAddon(script.tv.show.next.aired)</visible>
+			<onclick>RunAddon(script.tv.show.next.aired,return)</onclick>
+			<property name="path">RunAddon(script.tv.show.next.aired,return)</property>
+			<property name="list">RunAddon(script.tv.show.next.aired,return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">11</property>
+			<label>TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5ctvshows.png/</thumb>
+			<property name="labelID">tvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvNavigator</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">11</property>
+			<label>My TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmytvshows.png/</thumb>
+			<property name="labelID">mytvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mytvNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mytvNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=mytvNavigator</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">11</property>
+			<label>Most Popular</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmost-popular.png/</thumb>
+			<property name="labelID">mostpopular</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=popular",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=popular",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=popular</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">11</property>
+			<label>People Watching</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cpeople-watching.png/</thumb>
+			<property name="labelID">peoplewatching</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=trending",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=trending",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=trending</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">11</property>
+			<label>New TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cnew-tvshows.png/</thumb>
+			<property name="labelID">newtvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">11</property>
+			<label>New Episodes</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5clatest-episodes.png/</thumb>
+			<property name="labelID">newepisodes</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvWidget",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvWidget",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvWidget</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-x11">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">11</property>
+			<label>$LOCALIZE[4]</label>
+			<label2 />
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">4</property>
+			<property name="defaultID">4</property>
+			<visible>[System.HasAddon(script.tv.show.next.aired)] + String.IsEqual(Window(10000).Property(submenuVisibility),x11)</visible>
+			<onclick>RunAddon(script.tv.show.next.aired,return)</onclick>
+			<property name="path">RunAddon(script.tv.show.next.aired,return)</property>
+			<property name="list">RunAddon(script.tv.show.next.aired,return)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">11</property>
+			<label>TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5ctvshows.png/</thumb>
+			<property name="labelID">tvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvNavigator</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">11</property>
+			<label>My TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmytvshows.png/</thumb>
+			<property name="labelID">mytvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mytvNavigator",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=mytvNavigator",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=mytvNavigator</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">11</property>
+			<label>Most Popular</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cmost-popular.png/</thumb>
+			<property name="labelID">mostpopular</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=popular",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=popular",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=popular</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">11</property>
+			<label>People Watching</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cpeople-watching.png/</thumb>
+			<property name="labelID">peoplewatching</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=trending",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=trending",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=trending</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="6">
+			<property name="id">$NUMBER[6]</property>
+			<property name="mainmenuid">11</property>
+			<label>New TV Shows</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5cnew-tvshows.png/</thumb>
+			<property name="labelID">newtvshows</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvshows&amp;url=premiere</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="7">
+			<property name="id">$NUMBER[7]</property>
+			<property name="mainmenuid">11</property>
+			<label>New Episodes</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cscript.covenant.artwork%5cresources%5cmedia%5ccovenant%5clatest-episodes.png/</thumb>
+			<property name="labelID">newepisodes</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvWidget",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.covenant/?action=tvWidget",return)</property>
+			<property name="list">plugin://plugin.video.covenant/?action=tvWidget</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x11)</visible>
+			<property name="group">x11</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-x12">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x12">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x13">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Cache</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearcache</property>
+			<property name="defaultID">135</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Thumbnails</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearthumbnails</property>
+			<property name="defaultID">31328</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Logs</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearlogs</property>
+			<property name="defaultID">652</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Packages</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearpackages</property>
+			<property name="defaultID">20459</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">13</property>
+			<label>All Add-ons</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">alladd-ons</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(AddonBrowser)</onclick>
+			<property name="path">ActivateWindow(AddonBrowser)</property>
+			<property name="list">AddonBrowser</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-x13">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Cache</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearcache</property>
+			<property name="defaultID">135</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcache&amp;quot;)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Thumbnails</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearthumbnails</property>
+			<property name="defaultID">31328</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearthumb&amp;quot;)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Logs</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearlogs</property>
+			<property name="defaultID">652</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearcrash&amp;quot;)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">13</property>
+			<label>Clear Packages</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">clearpackages</property>
+			<property name="defaultID">20459</property>
+			<onclick>PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</onclick>
+			<property name="path">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</property>
+			<property name="list">PlayMedia(&amp;quot;plugin://plugin.program.ATools/?mode=clearpackages&amp;quot;)</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">13</property>
+			<label>All Add-ons</label>
+			<label2>Custom item</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">alladd-ons</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(AddonBrowser)</onclick>
+			<property name="path">ActivateWindow(AddonBrowser)</property>
+			<property name="list">AddonBrowser</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x13)</visible>
+			<property name="group">x13</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-x101">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">14</property>
+			<label>NBA Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fbethub.org%2fwp-content%2fuploads%2f2015%2f09%2fNBA_Logo_.png/</thumb>
+			<property name="labelID">nbagames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">14</property>
+			<label>NHL Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://https%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fde%2fthumb%2f1%2f19%2fLogo-NHL.svg%2f2000px-Logo-NHL.svg.png/</thumb>
+			<property name="labelID">nhlgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">14</property>
+			<label>NFL Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fwww.shermanreport.com%2fwp-content%2fuploads%2f2012%2f06%2fNFL-Logo1.gif/</thumb>
+			<property name="labelID">nflgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">14</property>
+			<label>MLB Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fcontent.sportslogos.net%2flogos%2f4%2f490%2ffull%2f1986.gif/</thumb>
+			<property name="labelID">mlbgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">14</property>
+			<label>SportsDevil</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.SportsDevil%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.SportsDevil</property>
+			<property name="defaultID">plugin.video.SportsDevil</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.SportsDevil",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.SportsDevil",return)</property>
+			<property name="list">plugin://plugin.video.SportsDevil</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-x101">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">14</property>
+			<label>NBA Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fbethub.org%2fwp-content%2fuploads%2f2015%2f09%2fNBA_Logo_.png/</thumb>
+			<property name="labelID">nbagames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nba</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">14</property>
+			<label>NHL Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://https%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fde%2fthumb%2f1%2f19%2fLogo-NHL.svg%2f2000px-Logo-NHL.svg.png/</thumb>
+			<property name="labelID">nhlgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nhl</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">14</property>
+			<label>NFL Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fwww.shermanreport.com%2fwp-content%2fuploads%2f2012%2f06%2fNFL-Logo1.gif/</thumb>
+			<property name="labelID">nflgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=nfl</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">14</property>
+			<label>MLB Games</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://http%3a%2f%2fcontent.sportslogos.net%2flogos%2f4%2f490%2ffull%2f1986.gif/</thumb>
+			<property name="labelID">mlbgames</property>
+			<property name="defaultID" />
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb",return)</property>
+			<property name="list">plugin://plugin.video.prosport/?url=&amp;home=&amp;away=&amp;mode=mlb</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">14</property>
+			<label>SportsDevil</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.SportsDevil%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.SportsDevil</property>
+			<property name="defaultID">plugin.video.SportsDevil</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.SportsDevil",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.SportsDevil",return)</property>
+			<property name="list">plugin://plugin.video.SportsDevil</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x101)</visible>
+			<property name="group">x101</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-x202">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x202">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x303">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">16</property>
+			<label>Cartoons8</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.cartoons8%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.cartoons8</property>
+			<property name="defaultID">plugin.video.cartoons8</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.cartoons8",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.cartoons8",return)</property>
+			<property name="list">plugin://plugin.video.cartoons8</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">16</property>
+			<label>Disney Junior</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.disneyjunior%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.disneyjunior</property>
+			<property name="defaultID">plugin.video.disneyjunior</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.disneyjunior",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.disneyjunior",return)</property>
+			<property name="list">plugin://plugin.video.disneyjunior</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">16</property>
+			<label>Adult Swim</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.adultswim%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.adultswim</property>
+			<property name="defaultID">plugin.video.adultswim</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.adultswim",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.adultswim",return)</property>
+			<property name="list">plugin://plugin.video.adultswim</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">16</property>
+			<label>ToonMania</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.toonmania%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.toonmania</property>
+			<property name="defaultID">plugin.video.toonmania</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.toonmania",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.toonmania",return)</property>
+			<property name="list">plugin://plugin.video.toonmania</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">16</property>
+			<label>WatchCartoonOnline</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.watchcartoon_gw%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.watchcartoon_gw</property>
+			<property name="defaultID">plugin.video.watchcartoon_gw</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.watchcartoon_gw",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.watchcartoon_gw",return)</property>
+			<property name="list">plugin://plugin.video.watchcartoon_gw</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-x303">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">16</property>
+			<label>Cartoons8</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.cartoons8%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.cartoons8</property>
+			<property name="defaultID">plugin.video.cartoons8</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.cartoons8",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.cartoons8",return)</property>
+			<property name="list">plugin://plugin.video.cartoons8</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="2">
+			<property name="id">$NUMBER[2]</property>
+			<property name="mainmenuid">16</property>
+			<label>Disney Junior</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.disneyjunior%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.disneyjunior</property>
+			<property name="defaultID">plugin.video.disneyjunior</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.disneyjunior",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.disneyjunior",return)</property>
+			<property name="list">plugin://plugin.video.disneyjunior</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="3">
+			<property name="id">$NUMBER[3]</property>
+			<property name="mainmenuid">16</property>
+			<label>Adult Swim</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.adultswim%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.adultswim</property>
+			<property name="defaultID">plugin.video.adultswim</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.adultswim",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.adultswim",return)</property>
+			<property name="list">plugin://plugin.video.adultswim</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUMBER[4]</property>
+			<property name="mainmenuid">16</property>
+			<label>ToonMania</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.toonmania%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.toonmania</property>
+			<property name="defaultID">plugin.video.toonmania</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.toonmania",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.toonmania",return)</property>
+			<property name="list">plugin://plugin.video.toonmania</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="5">
+			<property name="id">$NUMBER[5]</property>
+			<property name="mainmenuid">16</property>
+			<label>WatchCartoonOnline</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.watchcartoon_gw%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.watchcartoon_gw</property>
+			<property name="defaultID">plugin.video.watchcartoon_gw</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.watchcartoon_gw",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.watchcartoon_gw",return)</property>
+			<property name="list">plugin://plugin.video.watchcartoon_gw</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x303)</visible>
+			<property name="group">x303</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-x404">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">17</property>
+			<label>Planet MMA</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.ufc-finest%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.ufc-finest</property>
+			<property name="defaultID">plugin.video.ufc-finest</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.ufc-finest",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.ufc-finest",return)</property>
+			<property name="list">plugin://plugin.video.ufc-finest</property>
+			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
+			<property name="group">x404</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-alt-x404">
+		<item id="1">
+			<property name="id">$NUMBER[1]</property>
+			<property name="mainmenuid">17</property>
+			<label>Planet MMA</label>
+			<label2>Video Add-On</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb>image://special://home/addons%5cplugin.video.ufc-finest%5cicon.png/</thumb>
+			<property name="labelID">plugin.video.ufc-finest</property>
+			<property name="defaultID">plugin.video.ufc-finest</property>
+			<onclick>ActivateWindow(Videos,"plugin://plugin.video.ufc-finest",return)</onclick>
+			<property name="path">ActivateWindow(Videos,"plugin://plugin.video.ufc-finest",return)</property>
+			<property name="list">plugin://plugin.video.ufc-finest</property>
+			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),x404)</visible>
+			<property name="group">x404</property>
+			<property name="isSubmenu">True</property>
+		</item>
+	</include>
+	<include name="skinshortcuts-group-x505">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x505">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-x606">
+		<description>No items</description>
+	</include>
+	<include name="skinshortcuts-group-alt-x606">
+		<description>No items</description>
+	</include>
+</includes>

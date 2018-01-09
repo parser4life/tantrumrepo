@@ -1,0 +1,5 @@
+v0.0.2
+Tools Menu/API Fix Added
+
+v0.0.1
+Initial Release

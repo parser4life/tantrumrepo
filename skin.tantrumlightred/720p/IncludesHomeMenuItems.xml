@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="HomeSubMenuVideos">
+		<control type="image" id="90101">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90102">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>342</label>
+			<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
+			<visible>Library.HasContent(Movies) + Skin.HasSetting(HomeMenuNoMovieButton)</visible>
+		</control>
+		<control type="button" id="90103">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>20343</label>
+			<onclick>ActivateWindow(Videos,TvShowTitles,return)</onclick>
+			<visible>Library.HasContent(TVShows) + Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
+		</control>
+		<control type="button" id="90104">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>20389</label>
+			<onclick>ActivateWindow(Videos,MusicVideoTitles,return)</onclick>
+			<visible>Library.HasContent(MusicVideos)</visible>
+		</control>
+		<control type="button" id="90105">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>744</label>
+			<onclick>ActivateWindow(Videos,Files,return)</onclick>
+		</control>
+		<control type="button" id="90106">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>14022</label>
+			<onclick>ActivateWindow(Videos,Root)</onclick>
+			<visible>Library.HasContent(Video)</visible>
+		</control>
+		<control type="button" id="90107">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>24001</label>
+			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+		</control>
+		<control type="image" id="90108">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuMovies">
+		<control type="image" id="90161">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90162">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90160).ListItemNoWrap(0).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90160).ListItemNoWrap(0).FileNameAndPath],return)</onclick>
+		</control>
+		<control type="button" id="90163">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90160).ListItemNoWrap(1).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90160).ListItemNoWrap(1).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90160).ListItemNoWrap(1).Label)</visible>
+		</control>
+		<control type="button" id="90164">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90160).ListItemNoWrap(2).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90160).ListItemNoWrap(2).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90160).ListItemNoWrap(2).Label)</visible>
+		</control>
+		<control type="button" id="90165">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90160).ListItemNoWrap(3).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90160).ListItemNoWrap(3).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90160).ListItemNoWrap(3).Label)</visible>
+		</control>
+		<control type="button" id="90166">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90160).ListItemNoWrap(4).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90160).ListItemNoWrap(4).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90160).ListItemNoWrap(4).Label)</visible>
+		</control>
+		<control type="button" id="90167">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90160).ListItemNoWrap(5).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90160).ListItemNoWrap(5).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90160).ListItemNoWrap(5).Label)</visible>
+		</control>
+		<control type="image" id="90168">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuTVShows">
+		<control type="image" id="90171">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90172">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90170).ListItemNoWrap(0).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90170).ListItemNoWrap(0).FileNameAndPath],return)</onclick>
+		</control>
+		<control type="button" id="90173">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90170).ListItemNoWrap(1).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90170).ListItemNoWrap(1).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90170).ListItemNoWrap(1).Label)</visible>
+		</control>
+		<control type="button" id="90174">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90170).ListItemNoWrap(2).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90170).ListItemNoWrap(2).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90170).ListItemNoWrap(2).Label)</visible>
+		</control>
+		<control type="button" id="90175">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90170).ListItemNoWrap(3).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90170).ListItemNoWrap(3).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90170).ListItemNoWrap(3).Label)</visible>
+		</control>
+		<control type="button" id="90176">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90170).ListItemNoWrap(4).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90170).ListItemNoWrap(4).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90170).ListItemNoWrap(4).Label)</visible>
+		</control>
+		<control type="button" id="90177">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90170).ListItemNoWrap(5).Label]</label>
+			<onclick>ActivateWindow(Videos,$INFO[Container(90170).ListItemNoWrap(5).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90170).ListItemNoWrap(5).Label)</visible>
+		</control>
+		<control type="image" id="90178">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuMusic">
+		<control type="image" id="90111">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90112">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90110).ListItemNoWrap(0).Label]</label>
+			<onclick>ActivateWindow(Music,$INFO[Container(90110).ListItemNoWrap(0).FileNameAndPath],return)</onclick>
+		</control>
+		<control type="button" id="90113">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90110).ListItemNoWrap(1).Label]</label>
+			<onclick>ActivateWindow(Music,$INFO[Container(90110).ListItemNoWrap(1).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90110).ListItemNoWrap(1).Label)</visible>
+		</control>
+		<control type="button" id="90114">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90110).ListItemNoWrap(2).Label]</label>
+			<onclick>ActivateWindow(Music,$INFO[Container(90110).ListItemNoWrap(2).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90110).ListItemNoWrap(2).Label)</visible>
+		</control>
+		<control type="button" id="90115">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90110).ListItemNoWrap(3).Label]</label>
+			<onclick>ActivateWindow(Music,$INFO[Container(90110).ListItemNoWrap(3).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90110).ListItemNoWrap(3).Label)</visible>
+		</control>
+		<control type="button" id="90116">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90110).ListItemNoWrap(4).Label]</label>
+			<onclick>ActivateWindow(Music,$INFO[Container(90110).ListItemNoWrap(4).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90110).ListItemNoWrap(4).Label)</visible>
+		</control>
+		<control type="button" id="90117">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>$INFO[Container(90110).ListItemNoWrap(5).Label]</label>
+			<onclick>ActivateWindow(Music,$INFO[Container(90110).ListItemNoWrap(5).FileNameAndPath],return)</onclick>
+			<visible>!String.IsEmpty(Container(90110).ListItemNoWrap(5).Label)</visible>
+		</control>
+		<control type="image" id="90119">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuSystem">
+		<control type="image" id="90121">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90122">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>5</label>
+			<onclick>ActivateWindow(Settings)</onclick>
+		</control>
+		<control type="button" id="90123">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>7</label>
+			<onclick>ActivateWindow(FileManager)</onclick>
+		</control>
+		<control type="button" id="90124">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Skin Settings</label>
+			<onclick>ActivateWindow(SkinSettings)</onclick>
+		</control>
+		<control type="button" id="90125">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>13200</label>
+			<onclick>ActivateWindow(Profiles)</onclick>
+		</control>
+		<control type="button" id="90126">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>130</label>
+			<onclick>ActivateWindow(SystemInfo)</onclick>
+		</control>
+		<control type="image" id="90127">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuPlayDisc">
+		<control type="image" id="90131">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90132">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>13391</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>EjectTray()</onclick>
+		</control>
+		<control type="image" id="90133">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuPictures">
+		<control type="image" id="90147">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90148">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>24001</label>
+			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
+		</control>
+		<control type="image" id="90149">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuTV">
+		<control type="image" id="90141">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90143">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19019</label>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+		</control>
+		<control type="button" id="90144">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>22020</label>
+			<onclick>ActivateWindow(TVGuide)</onclick>
+		</control>
+		<control type="button" id="90145">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19163</label>
+			<onclick>ActivateWindow(TVRecordings)</onclick>
+		</control>
+		<control type="button" id="90146">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19138</label>
+			<onclick>ActivateWindow(TVTimerRules)</onclick>
+		</control>
+		<control type="button" id="90147">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19040</label>
+			<onclick>ActivateWindow(TVTimers)</onclick>
+		</control>
+		<control type="button" id="90148">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>137</label>
+			<onclick>ActivateWindow(TVSearch)</onclick>
+		</control>
+		<control type="image" id="90149">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuRadio">
+		<control type="image" id="90141">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="90243">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19019</label>
+			<onclick>ActivateWindow(RadioChannels)</onclick>
+		</control>
+		<control type="button" id="90244">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>22020</label>
+			<onclick>ActivateWindow(RadioGuide)</onclick>
+		</control>
+		<control type="button" id="90245">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19163</label>
+			<onclick>ActivateWindow(RadioRecordings)</onclick>
+		</control>
+		<control type="button" id="90246">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19138</label>
+			<onclick>ActivateWindow(RadioTimerRules)</onclick>
+		</control>
+		<control type="button" id="90247">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>19040</label>
+			<onclick>ActivateWindow(RadioTimers)</onclick>
+		</control>
+		<control type="button" id="90248">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>137</label>
+			<onclick>ActivateWindow(RadioSearch)</onclick>
+		</control>
+		<control type="image" id="90249">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuTantrum">
+		<control type="image" id="91000">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="91001">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>APK Menu</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.program.tantrumtv/?description&amp;fanart=special://home/addons%5cplugin.program.tantrumtv%5cfanart.jpg&amp;iconimage=special://home/addons%5cplugin.program.tantrumtv%5cresources%5cart%5capk.png&amp;mode=apkinstaller&amp;name=%5bCOLOR%20red%5d%5bB%5dTantrum.TV%20%5b%2fB%5d%5b%2fCOLOR%5d%5bCOLOR%20snow%5d%5bB%5dApk%20Menu%5b%2fB%5d%5b%2fCOLOR%5d&amp;url=url&quot;,return)</onclick>
+		</control>
+		<control type="button" id="91002">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Auto Clean</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>RunAddon(plugin.program.tantrumcleaner)</onclick>
+		</control>
+		<control type="button" id="91003">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Skin Settings</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(SkinSettings)</onclick>
+		</control>
+		<control type="button" id="91004">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Backup Data</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.program.tantrumtv/?description&amp;fanart=special://home/addons%5cplugin.program.tantrumtv%5cfanart.jpg&amp;iconimage=special://home/addons%5cplugin.program.tantrumtv%5cresources%5cart%5csave.png&amp;mode=savedata&amp;name=%5bCOLOR%20red%5d%5bB%5dTantrum.TV%20%5b%2fB%5d%5b%2fCOLOR%5d%5bCOLOR%20snow%5d%5bB%5dSave%20Data%5b%2fB%5d%5b%2fCOLOR%5d&amp;url=url&quot;,return)</onclick>
+		</control>
+		<control type="button" id="91005">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Restore Data</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.program.tantrumtv/?description&amp;fanart=special://home/addons%5cplugin.program.tantrumtv%5cfanart.jpg&amp;iconimage=special://home/addons%5cplugin.program.tantrumtv%5cresources%5cart%5crestoredata.png&amp;mode=restoremenu&amp;name=%5bCOLOR%20red%5d%5bB%5dTantrum.TV%20%5b%2fB%5d%5b%2fCOLOR%5d%5bCOLOR%20snow%5d%5bB%5dRestore%20Data%5b%2fB%5d%5b%2fCOLOR%5d&amp;url=url&quot;,return)</onclick>
+		</control>
+		<control type="image" id="91006">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuSports">
+		<control type="image" id="91006">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="91007">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Bob Sports</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.bob.unleashed/?description=No%20information%20available&amp;fanart=special://home/addons%5cplugin.video.bob.unleashed%5cfanart.jpg&amp;iconimage=http%3a%2f%2fnorestrictions.club%2fnorestrictions.club%2freloaded%2ficons%2fMain%2fMain-Sports.png&amp;mode=get_list&amp;name=Bob%20Sports&amp;url=http%3a%2f%2fwww.norestrictions.club%2fsports%2fbobsports.xml&quot;,return)</onclick>
+		</control>
+		<control type="button" id="9100777">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Extreme Sports</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>RunAddon(plugin.video.extreme)</onclick>
+		</control>
+		<control type="button" id="91008">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>WWE On Demand</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.wwe-on-demand/&quot;,return)</onclick>
+		</control>
+		<control type="button" id="9100999">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Project D</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>RunAddon(plugin.video.pdsports)</onclick>
+		</control>
+		<control type="button" id="91009">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Pyramid</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.thepyramid/?fanart=https%3a%2f%2farchive.org%2fdownload%2fpyramidnew%2fpyramidnew.jpg&amp;mode=1&amp;name=%5bB%5d%5bI%5d%5bCOLORtomato%5dSport%20Zone%5b%2fB%5d%5b%2fI%5d%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fpyramid.teamzt.seedr.io%2fpyramid%2fsport.txt&quot;,return)</onclick>
+		</control>
+        <control type="image" id="91011">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuAndroid">
+		<control type="image" id="91012">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="91013">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>IPVanish VPN</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>StartAndroidActivity(&quot;com.ixolit.ipvanish&quot;)</onclick>
+		</control>
+		<control type="button" id="91014">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Live NetTV</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>StartAndroidActivity(&quot;com.live.androidnettv&quot;)</onclick>
+		</control>
+		<control type="button" id="91015">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Mobdro</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>StartAndroidActivity(&quot;com.mobdro.android&quot;)</onclick>
+		</control>
+		<control type="button" id="91016">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Snappy Streamz</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>StartAndroidActivity(&quot;com.snappy.streamz&quot;)</onclick>
+		</control>
+		<control type="button" id="91017">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Terrarium TV</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>StartAndroidActivity(&quot;com.nitroxenon.terrarium&quot;)</onclick>
+		</control>
+		<control type="button" id="91018">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Quick Support</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>StartAndroidActivity(&quot;com.teamviewer.quicksupport.market&quot;)</onclick>
+		</control>		
+        <control type="image" id="91019">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuKids">
+		<control type="image" id="91020">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="91021">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Kids Zone</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.thepyramid/?fanart=https%3a%2f%2farchive.org%2fdownload%2fpyramidnew%2fpyramidnew.jpg&amp;mode=1&amp;name=%5bB%5d%5bI%5d%5bCOLORorange%5dKids%20Zone%5b%2fB%5d%5b%2fI%5d%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fpyramid.teamzt.seedr.io%2fpyramid%2fkidszone.txt&quot;,return)</onclick>
+		</control>
+		<control type="button" id="91022">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Klassic Kids</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.MaverickTV/?fanart=https%3a%2f%2fi.imgur.com%2ffiRGzIM.jpg&amp;iconimage=http%3a%2f%2fmavericktv.net%2fdata%2ficons%2fklassic.jpg&amp;mode=1&amp;name=%5bCOLOR%20lime%5d%5bB%5dKlassic%20Kids%20TV%5b%2fB%5d%5b%2fCOLOR%5d&amp;url=https%3a%2f%2fpastebin.com%2fraw%2ftCwTCezg&quot;,return)</onclick>
+		</control>
+		<control type="button" id="91023">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Pippy's Picks</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>RunAddon(plugin.video.pip)</onclick>
+		</control>
+        <control type="image" id="91027">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeSubMenuTheMovies">
+		<control type="image" id="91028">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3" flipx="true">HomeSubEnd.png</texture>
+		</control>
+		<control type="button" id="91030">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Amore</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.amore/&quot;,return)</onclick>
+		</control>
+		<control type="button" id="91032">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Exodus</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.exodus/&quot;,return)</onclick>
+		</control>
+		<control type="button" id="91028">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Fright Night</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.frightnight/&quot;,return)</onclick>
+		</control>
+		<control type="button" id="91033">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Golden Cinema</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>RunAddon(plugin.video.goldencinema)</onclick>
+		</control>
+		<control type="button" id="91034">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Movie Critics</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.critic/&quot;,return)</onclick>
+		</control>
+		<control type="button" id="91031">
+			<include>ButtonHomeSubCommonValues</include>
+			<label>Sky Cinema</label>
+			<onclick>SetFocus(9000)</onclick>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.MaverickTV/?fanart=https%3a%2f%2fassets.switcher.ie%2fcms%2fimages%2fimages%2f000%2f000%2f771%2foriginal%2fSky_Cinema_Logo-800fcd9322246d6895d8be37272e1319.png%3f1477312035&amp;iconimage=http%3a%2f%2fmavericktv.net%2fdata%2ficons%2fskycinema.jpg&amp;mode=1&amp;name=%5bCOLOR%20lime%5d%5bB%5dSky%20Cinema%20Channels%20HD%5b%2fB%5d%5b%2fCOLOR%5d&amp;url=https%3a%2f%2fpastebin.com%2fraw%2fG7CYnFTp&quot;,return)</onclick>
+		</control>
+        <control type="image" id="91035">
+			<width>35</width>
+			<height>35</height>
+			<texture border="0,0,0,3">HomeSubEnd.png</texture>
+		</control>
+	</include>
+	<include name="HomeAddonItemsVideos">
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton1))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton1)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton1))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton1))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton2))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton2)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton2))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton2))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton3))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton3)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton3))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton3))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton4))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton4)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton4))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton4))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeVideosButton5))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeVideosButton5)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeVideosButton5))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeVideosButton5))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonItemsVideoOnDemand">
+		<item>
+			<label>Death Streams</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.blamo/?mode=browse&amp;section=Movies&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/dsmovies.jpg</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Neptune Rising</label>
+			<onclick>RunAddon(plugin.video.neptune)</onclick>
+			<icon>special://home/addons/plugin.video.neptune/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Strictly HD</label>
+			<onclick>RunAddon(plugin.video.spinzstrictlyhd)</onclick>
+			<icon>http://raw.github.com/spinztv/pro/master//_repo/plugin.video.spinzstrictlyhd/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Supra Box</label>
+			<onclick>RunAddon(plugin.video.suprabox)</onclick>
+			<icon>special://home/addons/plugin.video.suprabox/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Tempus Reborn</label>
+			<onclick>RunAddon(plugin.video.tempusreborn)</onclick>
+			<icon>special://home/addons/plugin.video.tempusreborn/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsTVShows">
+		<item>
+			<label>Adult Swim</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.adultswim/&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/AdultSwim.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Death Streams</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.blamo/?mode=browse&amp;section=TV&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/dstvshows.jpg</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Neptune Rising</label>
+			<onclick>RunAddon(plugin.video.neptune)</onclick>
+			<icon>special://home/addons/plugin.video.neptune/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>StreamHub</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.streamhub/?action=tvNavigator&quot;,return)</onclick>
+			<icon>https://s12.postimg.org/ozx9nxirx/tvshows.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>The Pyramid</label>
+			<onclick>RunAddon(plugin.video.thepyramid)</onclick>
+			<icon>special://home/addons/plugin.video.thepyramid/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsBoxSets">
+		<item>
+			<label>Bob BoxSets</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.bob.unleashed/?description=No%20information%20available&amp;fanart=special://home/addons%5cplugin.video.bob.unleashed%5cfanart.jpg&amp;iconimage=http%3a%2f%2fnorestrictions.club%2fnorestrictions.club%2freloaded%2ficons%2fMain%2fMain-Boxsets.png&amp;mode=get_list&amp;name=TNPB%20Boxsets&amp;url=http%3a%2f%2fwww.norestrictions.club%2ftnpb%2fDirectories%2fMain%2520Directory%2fAll%2520Boxsets%2520Directory.xml&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/BobBoxSets.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Maverick TV BoxSets</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.MaverickTV/?fanart=http%3a%2f%2fwallpapercave.com%2fwp%2f4Kh9Gm1.jpg&amp;mode=1&amp;name=%5bCOLOR%20lime%5d%5bB%5dMaverick%20TV%20Boxsets%5b%2fB%5d%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fmavericktv.net%2fdata%2fseries%2fseries.xml&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/MavTVBoxSets.jpg</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Pyramid TV BoxSets</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.thepyramid/?fanart=https%3a%2f%2farchive.org%2fdownload%2fpyramidnew%2fpyramidnew.jpg&amp;mode=1&amp;name=%5bB%5d%5bI%5d%5bCOLORtomato%5dTV%20Boxsets%5b%2fB%5d%5b%2fI%5d%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fpyramid.teamzt.seedr.io%2fpyramid%2ffullseries.txt&quot;,return)</onclick>
+			<icon>http://pyramid.teamzt.seedr.io/pyramid/Icons/tv.jpg</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsKidsCorner">
+		<item>
+			<label>Cartoon Crazy</label>
+			<onclick>RunAddon(plugin.video.spinzcartooncrazy)</onclick>
+			<icon>http://raw.github.com/spinztv/pro/master//_repo/plugin.video.spinzcartooncrazy/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Kids Corner</label>
+			<onclick>RunAddon(plugin.video.kidzcorner)</onclick>
+			<icon>https://raw.githubusercontent.com/gracie242/zips/master/plugin.video.kidzcorner/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Kids Nation</label>
+			<onclick>RunAddon(plugin.video.kidsnation)</onclick>
+			<icon>https://raw.githubusercontent.com/gracie242/zips/master/plugin.video.kidsnation/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Toon Mania</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.toonmania/&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/ToonMania.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>WatchCartoonOnline</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.watchcartoon_gw/&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/WCO.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsBob">
+		<item>
+			<label>Amazing TV</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.bob.unleashed/?description=No%20information%20available&amp;fanart=E%3a%5cKodi-Light%5cportable_data%5caddons%5cplugin.video.bob.unleashed%5cfanart.jpg&amp;iconimage=http%3a%2f%2f178.32.217.111%2freloaded%2ficons%2fMain%2famazingtv.png&amp;mode=get_list&amp;name=Amazing%20TV&amp;url=https%3a%2f%2fpastebin.com%2fraw%2fZDVrMAUL&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/BobTV.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Bob Sports</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.bob.unleashed/?description=No%20information%20available&amp;fanart=special://home/addons%5cplugin.video.bob.unleashed%5cfanart.jpg&amp;iconimage=http%3a%2f%2fnorestrictions.club%2fnorestrictions.club%2freloaded%2ficons%2fMain%2fMain-Sports.png&amp;mode=get_list&amp;name=Bob%20Sports&amp;url=http%3a%2f%2fwww.norestrictions.club%2fsports%2fbobsports.xml&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/BobSports.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Movie Stars</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.bob.unleashed/?description=No%20information%20available&amp;fanart=special://home/addons%5cplugin.video.bob.unleashed%5cfanart.jpg&amp;iconimage=http%3a%2f%2fnorestrictions.club%2fnorestrictions.club%2freloaded%2ficons%2fMain%2fMain-Walk-of-Fame.png&amp;mode=get_list&amp;name=Walk%20of%20Fame&amp;url=http%3a%2f%2fwww.norestrictions.club%2freloaded%2fwalkoffamereloaded.xml&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/BobWOF.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Music TV</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.bob.unleashed/?description=No%20information%20available&amp;fanart=special://home/addons%5cplugin.video.bob.unleashed%5cfanart.jpg&amp;iconimage=http%3a%2f%2fnorestrictions.club%2fnorestrictions.club%2freloaded%2ficons%2fMain%2fMain-Music.png&amp;mode=get_list&amp;name=Music%20TV&amp;url=http%3a%2f%2fwww.norestrictions.club%2ftastreams%2ffiles%2fmusic%2fMusic%2520TV.xml&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/BobMusic.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>New Releases</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.bob.unleashed/?description=No%20information%20available&amp;fanart=E%3a%5cKodi-Light%5cportable_data%5caddons%5cplugin.video.bob.unleashed%5cfanart.jpg&amp;iconimage=http%3a%2f%2f178.32.217.111%2freloaded%2ficons%2fMain%2fMain-New-Releases.png&amp;mode=get_list&amp;name=New%20Releases&amp;url=https%3a%2f%2fpastebin.com%2fraw%2fxa8hFS9Z&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/BobNew.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsSports">
+		<item>
+			<label>Maverick</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.MaverickTV/?fanart=http%3a%2f%2fcorrectfootball.com%2fwp-content%2fuploads%2f2015%2f08%2fPREMIER-LEAGUE.jpg&amp;iconimage=http%3a%2f%2fmavericktv.net%2fdata%2ficons%2f3pm.jpg&amp;mode=1&amp;name=%5bCOLOR%20lime%5d%5bB%5dMaverick%20Live%20Sports%5b%2fB%5d%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fmavericktv.net%2fdata%2fsportslinks%2fprem.xml&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/MavSports.jpg</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Motor Replays</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.motorreplays/&quot;,return)</onclick>
+			<icon>special://home/addons/plugin.video.motorreplays/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Planet MMA</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.ufc-finest/&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/PlanetMMA.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Tantrum Sports</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.prosport/&quot;,return)</onclick>
+			<icon>special://home/addons/plugin.video.prosport/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>SportsDevil</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.SportsDevil/&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/SportsDevil.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsLiveTVFree">
+		<item>
+			<label>StreamHub</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.streamhub/&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/StreamHub.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Pyramid Live</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.thepyramid/?fanart=https%3a%2f%2farchive.org%2fdownload%2fpyramidnew%2fpyramidnew.jpg&amp;mode=1&amp;name=%5bB%5d%5bI%5d%5bCOLORorange%5dLive%20TV%5b%2fB%5d%5b%2fI%5d%5b%2fCOLOR%5d&amp;url=http%3a%2f%2fpyramid.teamzt.seedr.io%2fpyramid%2flivetv.txt&quot;,return)</onclick>
+			<icon>https://previews.123rf.com/images/dirkercken/dirkercken1311/dirkercken131100306/23545290-live-stream-tv-music-or-video-button-icon-or-sign-live-on-air-broadcasting-movie-or-radio-program-Stock-Photo.jpg</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Mobdro</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://script.module.streamhublive/?description&amp;iconimage=http%3a%2f%2fapk.co%2fimages%2fmobdro-2014-freemium.png&amp;mode=4&amp;name=%5bCOLOR%20white%5d%5bB%5dMobdro%5b%2fCOLOR%5d%5b%2fB%5d&amp;url=mobdro&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/Mobdro.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Snappy Streamz</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://script.module.streamhublive/?description&amp;iconimage=https%3a%2f%2fwww.apkdld.com%2fwp-content%2fuploads%2f2017%2f06%2fsnappy-streamz-apk-300x293.jpg&amp;mode=4&amp;name=%5bCOLOR%20white%5d%5bB%5dSnappy%20Streamz%5b%2fCOLOR%5d%5b%2fB%5d&amp;url=snappystreams&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/SnappyStreamz.jpg</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Swift Streamz</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://script.module.streamhublive/?description&amp;iconimage=http%3a%2f%2fwww.swiftstreamz.com%2fimages%2fmbl-app.png&amp;mode=4&amp;name=%5bCOLOR%20white%5d%5bB%5dSwift%20Streamz%5b%2fCOLOR%5d%5b%2fB%5d&amp;url=swiftstreams&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/SwiftStreamz.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsMusic">
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton1))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton1)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton1))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeMusicButton1))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton2))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton2)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton2))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeMusicButton2))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton3))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton3)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton3))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeMusicButton3))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton4))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton4)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton4))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeMusicButton4))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeMusicButton5))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeMusicButton5)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeMusicButton5))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeMusicButton5))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonItemsPictures">
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomePictureButton1))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomePictureButton1)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton1))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomePictureButton1))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomePictureButton2))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomePictureButton2)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton2))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomePictureButton2))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomePictureButton3))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomePictureButton3)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton3))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomePictureButton3))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomePictureButton4))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomePictureButton4)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton4))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomePictureButton4))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomePictureButton5))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomePictureButton5)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomePictureButton5))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomePictureButton5))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonItemsPrograms">
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton1))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton1)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton1))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeProgramButton1))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton2))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton2)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton2))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeProgramButton2))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton3))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton3)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton3))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeProgramButton3))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton4))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton4)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton4))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeProgramButton4))</visible>
+		</item>
+		<item>
+			<label>$INFO[system.addontitle(Skin.String(HomeProgramButton5))]</label>
+			<onclick>RunAddon($INFO[Skin.String(HomeProgramButton5)])</onclick>
+			<icon>$INFO[system.addonicon(Skin.String(HomeProgramButton5))]</icon>
+			<thumb>-</thumb>
+			<visible>!String.IsEmpty(Skin.String(HomeProgramButton5))</visible>
+		</item>
+	</include>
+	<include name="HomeAddonItemsTantrum">
+		<item>
+			<label>Clear Cache</label>
+			<onclick>PlayMedia(&quot;plugin://plugin.program.ATools/?mode=clearcache&quot;)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/ClearCache.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Clear Thumbnails</label>
+			<onclick>PlayMedia(&quot;plugin://plugin.program.ATools/?mode=clearthumb&quot;)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/ClearThumbs.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Clear Logs</label>
+			<onclick>PlayMedia(&quot;plugin://plugin.program.ATools/?mode=clearcrash&quot;)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/ClearLogs.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Clear Packages</label>
+			<onclick>PlayMedia(&quot;plugin://plugin.program.ATools/?mode=clearpackages&quot;)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/ClearPackages.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>All Add-ons</label>
+			<onclick>ActivateWindow(AddonBrowser)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/Addons.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsYouTube">
+		<item>
+			<label>Fitness Zone</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.fitnesszone/&quot;,return)</onclick>
+			<icon>special://home/addons/plugin.video.fitnesszone/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Grub Hub</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.grubhub/&quot;,return)</onclick>
+			<icon>special://home/addons/plugin.video.grubhub/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>YouTube</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.youtube/&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/YouTube.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>YouMusic</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.YouMusic/&quot;,return)</onclick>
+			<icon>special://home/addons/resource.images.tantrumicons/resources/YouMusic.png</icon>
+			<thumb>-</thumb>
+		</item>
+		<item>
+			<label>Tantrum.TV Videos</label>
+			<onclick>ActivateWindow(10025,&quot;plugin://plugin.video.tantrumtvchannel/&quot;,return)</onclick>
+			<icon>special://home/addons/plugin.video.tantrumtvchannel/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+	<include name="HomeAddonItemsAndroid">
+		<item>
+			<label>APK Install Wizard</label>
+			<onclick>RunAddon(plugin.program.apkwizard)</onclick>
+			<icon>special://home/addons/plugin.program.apkwizard/resources/art/icon.png</icon>
+			<thumb>-</thumb>
+		</item>
+	</include>
+</includes>
