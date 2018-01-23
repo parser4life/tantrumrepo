@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.module.urllib3" name="urllib3" version="1.22" provider-name="shazow">
+<addon id="script.module.urllib3"
+       name="urllib3"
+       version="1.22"
+       provider-name="shazow">
   <requires>
     <import addon="xbmc.python" version="2.25.0"/>
   </requires>

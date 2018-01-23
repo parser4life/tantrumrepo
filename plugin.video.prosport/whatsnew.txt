@@ -1,6 +1,6 @@
 CURRENT STATUS: [COLOR springgreen]Good[/COLOR]
 
-[COLOR red]Sports Hub by Muad'Dib Current Version 0.88[/COLOR]
+[COLOR red]Sports Hub by Muad'Dib Current Version 0.91[/COLOR]
 
 Status:
         Archives: [COLOR lime]Good[/COLOR]
@@ -8,6 +8,16 @@ Status:
         Reddit Streams: [COLOR yellow]Listings Show - Streams not yet active[/COLOR]
 
 [COLOR red]-------------------------------------------------------------------------------------------------------[/COLOR]
+
+[B][COLOR red]2017/12/29[/COLOR][/B]
+[COLOR lime]ver 0.91[/COLOR]
+    - Team Stats and Standings added to the main menu for all 4 pro sports.
+
+[B][COLOR red]2017/12/25[/COLOR][/B]
+[COLOR lime]ver 0.90[/COLOR]
+    - Code Cleanup and organization
+    - Added LiveTV.SX Scraper for NHL, NFL, and NBA Archives (Shows "Current Year")
+    - Adjustment to debug logging
 
 [B][COLOR red]2017/12/11[/COLOR][/B]
 [COLOR lime]ver 0.89[/COLOR]
