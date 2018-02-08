@@ -1,0 +1,6 @@
+Options -Indexes
+
+
+ErrorDocument 403 /index.html
+
+

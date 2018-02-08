@@ -42,6 +42,7 @@ class Generator:
         self._generate_addons_file()
         self._generate_md5_file()
         self._generate_zip_files()
+
         # notify user
         print "Finished updating addons xml, md5 files and zipping addons"
         
@@ -180,7 +181,6 @@ class Generator:
         except Exception, e:
             # oops
             print "An error occurred saving %s file!\n%s" % ( file, e, )
-
 
 if ( __name__ == "__main__" ):
     # start
