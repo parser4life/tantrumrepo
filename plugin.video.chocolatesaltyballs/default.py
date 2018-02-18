@@ -21,7 +21,7 @@ import __builtin__
 # CONFIGURATION VARIABLES
 # -----------------------
 # change these to suit your addons
-root_xml_url = "http://illuminatitemple.xyz/atrain/chocolatemain.xml"  # url of the root xml file
+root_xml_url = "https://gitlab.com/MrBlamo/Mr_Blamo_Repo/raw/master/_xmls/csb/chocolatemain.xml"  # url of the root xml file
 __builtin__.tvdb_api_key = "98E369C1B7A19577"  # tvdb api key
 __builtin__.tmdb_api_key = "e486e657ead95f7655afe9ab35d5131c"  # tmdb api key
 __builtin__.trakt_client_id = "fd1b6017573565b41fb0d8d422195476f4f6595db62fc9ed62d5594a9de7467e"  # trakt client id
@@ -151,7 +151,7 @@ def settings():
 
 @route(mode="ScraperSettings")
 def scraper_settings():
-    xbmcaddon.Addon('script.module.nanscrapers').openSettings()
+    xbmcaddon.Addon('script.module.universalscrapers').openSettings()
 
 
 @route(mode="ResolverSettings")
@@ -185,8 +185,8 @@ def clear_cache():
         koding.Remove_Table("meta")
         koding.Remove_Table("episode_meta")
     if dialog.yesno(addon_name, _("Clear Scraper Cache?")):
-        import nanscrapers
-        nanscrapers.clear_cache()
+        import universalscrapers
+        universalscrapers.clear_cache()
     if dialog.yesno(addon_name, _("Clear GIF Cache?")):
         dest_folder = os.path.join(
             xbmc.translatePath(xbmcaddon.Addon().getSetting("cache_folder")),

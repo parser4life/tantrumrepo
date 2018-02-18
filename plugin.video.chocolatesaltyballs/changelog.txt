@@ -7,3 +7,9 @@ updated imdb, updated to resolveurl(Thanks blammy :x)
 V1.3
 source.py update
 
+v1.6
+Changed Disclaimer
+Changed License
+
+v1.7
+Moved the XML files to GitLab
