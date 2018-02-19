@@ -239,29 +239,30 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="plugin.video.tantrumtvchannel"
-    name="Tantrum.TV Videos"
-    version="1.0.1"
-    provider-name="MuadDib">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-    <import addon="plugin.video.youtube" version="5.0.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Tantrum.TV - Helping You Save</summary>
-    <description lang="en">This add-on is for the Tantrum.TV Playlist on Youtube. Here you will find helpful videos for using the Tantrum.TV Kodi Builds to watch what you want to watch without the high cable or sat bills.</description>
-    <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
-    <platform>all</platform>
-    <forum>https://www.facebook.com/groups/1709673909327662</forum>
-    <website>http://www.tantrumtv.com</website>
-  </extension>
+<addon id="plugin.video.tantrumtvchannel" name="Tantrum.TV Videos" version="1.0.2" provider-name="MuadDib">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.addon.common" version="2.0.0"/>
+        <import addon="plugin.video.youtube" version="5.5.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Tantrum.TV Youtube Channel Content</summary>
+        <description lang="en">This add-on is for the Tantrum.TV Playlist on Youtube. Here you will find helpful videos for using the Tantrum.TV Kodi Builds to watch what you want to watch without the high cable or sat bills.</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
+        The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
+        This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
+        </disclaimer>
+        <platform>all</platform>
+        <license>Beerware rev. 42</license>
+        <forum>https://www.facebook.com/groups/1709673909327662</forum>
+        <website>http://www.tantrumtv.com</website>
+    </extension>
 </addon>
 
-    <addon id="repository.tantrumtv" name="Tantrum.TV Repository" version="1.2.0" provider-name="MuadDib">
+    <addon id="repository.tantrumtv" name="Tantrum.TV Repository" version="1.2.1" provider-name="MuadDib">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
@@ -270,6 +271,11 @@ This is a Non-profit resource, organized solely for educational purposes which i
             <checksum>https://raw.githubusercontent.com/muaddibttv/tantrumrepo/master/_zips/addons.xml.md5</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/muaddibttv/tantrumrepo/master/_zips/</datadir>
             <hashes>false</hashes>
+            <dir>
+                <info compressed="false">http://teamuniversal.xyz/modules4all/addons.xml</info>
+                <checksum>http://teamuniversal.xyz/modules4all/addons.xml.md5</checksum>
+                <datadir zip="true">http://teamuniversal.xyz/modules4all/</datadir>
+            </dir>
             <dir>
                 <info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
                 <checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
