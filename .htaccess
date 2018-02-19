@@ -1,6 +1,0 @@
-Options -Indexes
-ErrorDocument 403 /index.html
-RewriteEngine on
-# Options +FollowSymlinks
-RewriteCond %{HTTP_REFERER} kodi-addons\.club [NC]
-RewriteRule .* - [F]

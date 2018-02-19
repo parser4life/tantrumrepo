@@ -14,6 +14,11 @@
                 <datadir zip="true">https://gitlab.com/TeamUniversal/modules4all/raw/master/</datadir>
             </dir>
             <dir>
+                <info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
+            </dir>
+            <dir>
                 <info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
                 <checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
                 <datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
@@ -29,5 +34,5 @@
             <description>{description}</description>
             <platform>all</platform>
             <genre>movies,usa</genre>
-    </extension>
-</addon>
+        </extension>
+    </addon>
