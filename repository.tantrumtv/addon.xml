@@ -9,11 +9,6 @@
             <datadir zip="true">https://raw.githubusercontent.com/muaddibttv/tantrumrepo/master/_zips/</datadir>
             <hashes>false</hashes>
             <dir>
-                <info compressed="false">https://gitlab.com/TeamUniversal/modules4all/raw/master/addons.xml</info>
-                <checksum>https://gitlab.com/TeamUniversal/modules4all/raw/master/addons.xml.md5</checksum>
-                <datadir zip="true">https://gitlab.com/TeamUniversal/modules4all/raw/master/</datadir>
-            </dir>
-            <dir>
                 <info compressed="false">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml</info>
                 <checksum>https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/addons.xml.md5</checksum>
                 <datadir zip="true">https://raw.githubusercontent.com/marcelveldt/repository.marcelveldt/master/</datadir>
