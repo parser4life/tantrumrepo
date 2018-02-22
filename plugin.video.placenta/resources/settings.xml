@@ -10,6 +10,7 @@
         <setting id="api.language" type="select" label="32316" values="AUTO|Bulgarian|Chinese|Croatian|Czech|Danish|Dutch|English|Finnish|French|German|Greek|Hebrew|Hungarian|Italian|Japanese|Korean|Norwegian|Polish|Portuguese|Romanian|Russian|Serbian|Slovak|Slovenian|Spanish|Swedish|Thai|Turkish|Ukrainian" default="AUTO" />
         <setting id="providers.lang" type="select" label="32360" values="English|German|German+English|French|French+English|Polish|Polish+English|Korean|Korean+English|Russian|Russian+English|Spanish|Spanish+English|Italian|Italian+English|Greek|Greek+English" default="English" />
         <setting id="flatten.tvshows" type="bool" label="32317" default="false" />
+        <setting id="show_season0" type="bool" label="32630" default="false"/>
         <setting id="fanart" type="bool" label="32318" default="true" />
         <setting id="showunaired" type="bool" label="32570" default="true" />
         <setting id="unaired.identify" type="enum" label="32608" lvalues="32589|32590|32591|32592|32593|32594|32595|32596|32597|32598" default="1" />
@@ -23,6 +24,7 @@
     </category>
     <category label="32621">
         <setting type="lsep" label="32622" />
+        <setting id="navi.docu" type="bool" label="32631" default="true" />
         <setting id="navi.kidscorner" type="bool" label="32610" default="true" />
         <setting id="navi.fitness" type="bool" label="32611" default="true" />
         <setting id="navi.legends" type="bool" label="32612" default="true" />

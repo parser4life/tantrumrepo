@@ -232,7 +232,16 @@ def cache_version_check():
 def _find_cache_version():
 
     import os
+
     versionFile = os.path.join(control.dataPath, 'cache.v')
+    try:
+        if not os.path.exists(versionFile): f = open(versionFile, 'w'); f.close()
+    except Exception as e:
+        import xbmc
+        print 'Placenta Addon Data Path Does not Exist. Creating Folder....'
+        ad_folder = xbmc.translatePath('special://home/userdata/addon_data/plugin.video.placenta')
+        os.makedirs(ad_folder)
+
     try: 
         with open(versionFile, 'rb') as fh: oldVersion = fh.read()
     except: oldVersion = '0'

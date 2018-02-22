@@ -1,6 +1,11 @@
 Placenta Module Changelog:
 Currently maintained by mr blamo and Muad'Dib
 
+ver 1.2.2
+    - Fixed some Cache init issues
+    - Added support for Season 0/Specials to Browse Series
+    - Added Documentary section, using TopDocumentaries website
+
 ver 1.2.1
     - Replaced Fanart.TV Key
     - Replaced TheMovieDB Key

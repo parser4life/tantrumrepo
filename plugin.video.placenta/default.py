@@ -21,6 +21,10 @@ action = params.get('action')
 
 subid = params.get('subid')
 
+docu_category = params.get('docuCat')
+
+docu_watch = params.get('docuPlay')
+
 podcast_show = params.get('podcastshow')
 
 podcast_cat = params.get('podcastlist')
@@ -383,6 +387,15 @@ elif action == 'podcastOne':
         podcast.podcast().podcast_play(action, podcast_episode)
     else:
         podcast.podcast().pco_root()
+
+elif action == 'docuHeaven':
+    from resources.lib.indexers import docu
+    if not docu_category == None:
+        docu.documentary().docu_list(docu_category)
+    elif not docu_watch == None:
+        docu.documentary().docu_play(docu_watch)
+    else:
+        docu.documentary().root()
 
 elif action == 'podbay':
     from resources.lib.indexers import podcast

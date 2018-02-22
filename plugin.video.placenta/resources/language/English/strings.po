@@ -1030,3 +1030,11 @@ msgstr ""
 msgctxt "#32629"
 msgid "PodBay"
 msgstr ""
+
+msgctxt "#32630"
+msgid "Show Season 0 in Browse Seasons"
+msgstr ""
+
+msgctxt "#32631"
+msgid "Documentaries"
+msgstr ""

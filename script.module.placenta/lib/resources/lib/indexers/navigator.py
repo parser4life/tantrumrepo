@@ -53,6 +53,8 @@ class navigator:
         if (traktIndicators == True and not control.setting('tv.widget.alt') == '0') or (traktIndicators == False and not control.setting('tv.widget') == '0'):
             self.addDirectoryItem(32006, 'tvWidget', 'latest-episodes.png', 'DefaultRecentlyAddedEpisodes.png')
 
+        if self.getMenuEnabled('navi.docu') == True:
+            self.addDirectoryItem(32631, 'docuHeaven', 'movies.png', 'DefaultMovies.png')
         if self.getMenuEnabled('navi.kidscorner') == True:
             self.addDirectoryItem(32610, 'kidscorner', 'kidscorner.png', 'DefaultMovies.png')
         if self.getMenuEnabled('navi.fitness') == True:

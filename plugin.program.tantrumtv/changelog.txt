@@ -1,3 +1,6 @@
+v3.0.3
+Fixed the Force Addon Update option (Derka derk)
+
 v3.0.2
 Updated YouTube XML Data for the Daily Limit Fix. Now uses a Tantrum.TV API Key for YouTube.
 

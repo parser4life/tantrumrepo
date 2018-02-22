@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.tantrumtv" name="[COLOR red][B]Tantrum.TV [/B][/COLOR] [COLOR snow][B]Wizard[/B][/COLOR]" version="3.1.0" provider-name="MuadDib">
+<addon id="plugin.program.tantrumtv" name="[COLOR red][B]Tantrum.TV[/B][/COLOR] [COLOR snow][B]Wizard[/B][/COLOR]" version="3.1.1" provider-name="MuadDib">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.requests" version="2.12.4"/>
@@ -19,7 +19,7 @@
     <website>https://www.facebook.com/groups/1709673909327662/</website>
     <email></email>
     <source></source>
-    <news>In version 3.0, wizard completely rewritten due to my own programming style OCD</news>
+    <news>The Spice must flow!</news>
     <assets>
         <icon>resources/art/icon.png</icon>
         <fanart>resources/art/fanart.jpg</fanart>
