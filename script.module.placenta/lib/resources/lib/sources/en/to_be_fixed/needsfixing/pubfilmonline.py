@@ -12,14 +12,15 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,urllib,urlparse,json
+import re,traceback,urllib,urlparse,json
 
+from resources.lib.modules import cfscrape
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import directstream
 from resources.lib.modules import jsunpack
+from resources.lib.modules import log_utils
 from resources.lib.modules import source_utils
-from resources.lib.modules import cfscrape
 
 class source:
     def __init__(self):
@@ -32,7 +33,6 @@ class source:
         self.scraper = cfscrape.create_scraper()
 
     def movie(self, imdb, title, localtitle, aliases, year):
-
         try:
             url =  '%s/movies/%s-%s/' % (self.base_link, cleantitle.geturl(title),year)
             r = self.scraper.get(url).content
@@ -42,6 +42,8 @@ class source:
                 if '<h2>ERROR <span>404</span></h2>' in r: return
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('PubFilmOnline - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
@@ -50,6 +52,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('PubFilmOnline - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -61,8 +65,9 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('PubFilmOnline - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -89,10 +94,11 @@ class source:
             for i in result:
                 url = i[0].replace('\/', '/')
                 sources.append({'source': 'gvideo', 'quality': source_utils.label_to_quality(i[1]), 'language': 'en', 'url': url, 'direct': True, 'debridonly': False})
-
             return sources
         except:
-            return
+            failure = traceback.format_exc()
+            log_utils.log('PubFilmOnline - Exception: \n' + str(failure))
+            return sources
 
     def resolve(self, url):
         if 'google' in url:

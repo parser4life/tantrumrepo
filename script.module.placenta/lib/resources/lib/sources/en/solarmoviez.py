@@ -12,14 +12,14 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-
-import re,urllib,urlparse,hashlib,random,string,json,base64,sys,xbmc
+import re,traceback,urllib,urlparse,hashlib,random,string,json,base64,sys,xbmc
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import cache
 from resources.lib.modules import directstream
 from resources.lib.modules import jsunfuck
+from resources.lib.modules import log_utils
 
 CODE = '''def retA():
     class Infix:
@@ -70,6 +70,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SolarMoviez - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
@@ -79,8 +81,9 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SolarMoviez - Exception: \n' + str(failure))
             return
-
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
@@ -91,6 +94,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SolarMoviez - Exception: \n' + str(failure))
             return
 
     def searchShow(self, title, season, aliases, headers):
@@ -104,8 +109,9 @@ class source:
             url = re.findall('<a href=\"(.+?\/movie\/%s-season-%s-.+?\.html)\"' % (cleantitle.geturl(title), season), r)[0]
 
             return url
-
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SolarMoviez - Exception: \n' + str(failure))
             return
 
     def searchMovie(self, title, year, aliases, headers):
@@ -127,6 +133,8 @@ class source:
                 url = [i[0] for i in results if self.matchAlias(i[1], aliases)][0]
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SolarMoviez - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -220,6 +228,8 @@ class source:
 
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SolarMoviez - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

@@ -12,7 +12,7 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re, urlparse, urllib, base64
+import re,traceback,urlparse,urllib,base64
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
@@ -30,14 +30,20 @@ class source:
         try:
             clean_title = cleantitle.geturl(title)
             search_url = urlparse.urljoin(self.base_link, self.search_link % clean_title.replace('-', '+'))
-            search_results = client.request(search_url)
 
-            parsed = client.parseDOM(search_results, 'div', {'id': 'movie-featured'})
-            parsed = [(client.parseDOM(i, 'a', ret='href'), re.findall('.+?elease:\s*(\d{4})</', i), re.findall('<b><i>(.+?)</i>', i)) for i in parsed]
-            parsed = [(i[0][0], i[1][0], i[2][0]) for i in parsed if (cleantitle.get(i[2][0]) == cleantitle.get(title) and i[1][0] == year)]
-            url = parsed[0][0]
+            results = client.request(search_url)
+            results = client.parseDOM(results, 'div', {'id': 'movie-featured'})
+            results = [(client.parseDOM(i, 'a', ret='href'),
+                  re.findall('.+?elease:\s*(\d{4})</', i),
+                  re.findall('<b><i>(.+?)</i>', i)) for i in results]
+            results = [(i[0][0], i[1][0], i[2][0]) for i in results if
+                 (cleantitle.get(i[2][0]) == cleantitle.get(title) and i[1][0] == year)]
+            url = results[0][0]
+
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('HDMega - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
@@ -46,6 +52,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('HDMega - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -72,6 +80,8 @@ class source:
 
             return url[0][1]
         except:
+            failure = traceback.format_exc()
+            log_utils.log('HDMega - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -108,7 +118,9 @@ class source:
                         pass
             return sources
         except:
-            return
+            failure = traceback.format_exc()
+            log_utils.log('HDMega - Exception: \n' + str(failure))
+            return sources
 
     def resolve(self, url):
         if self.base_link in url:

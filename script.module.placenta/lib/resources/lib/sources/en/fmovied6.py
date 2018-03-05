@@ -12,7 +12,7 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re, urllib, urlparse
+import re,traceback,urllib,urlparse
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
@@ -47,6 +47,8 @@ class source:
                                 return url
             return
         except:
+            failure = traceback.format_exc()
+            log_utils.log('FMovieD6 - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -71,7 +73,9 @@ class source:
                     sources.append({'source': 'DirectLink', 'quality': quality, 'language': 'en', 'url': link, 'direct': True, 'debridonly': False})
             return sources
         except:
-            return sources
+            failure = traceback.format_exc()
+            log_utils.log('FMovieD6 - Exception: \n' + str(failure))
+            return
 
     def resolve(self, url):
         return url

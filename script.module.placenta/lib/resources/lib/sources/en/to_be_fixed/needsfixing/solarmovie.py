@@ -12,11 +12,11 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-
-import re,urllib,urlparse,hashlib,random,string,json,base64,sys,xbmc,resolveurl
+import re,traceback,urllib,urlparse,hashlib,random,string,json,base64,sys,xbmc,resolveurl
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
+from resources.lib.modules import log_utils
 from resources.lib.modules import source_utils
 
 class source:
@@ -43,6 +43,8 @@ class source:
                         return item_url
             return
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SolarMovie - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -61,14 +63,18 @@ class source:
                         source_html   = client.request(vid_url,headers=headers)
                         source_string = re.compile('description" content="(.+?)"',re.DOTALL).findall(source_html)[0]
                         quality,info = source_utils.get_release_quality(source_string, vid_url)
-                    except: quality='DVD'
+                    except:
+                        quality = 'DVD'
+                        info = []
                     sources.append({'source': 'Openload','quality': quality,'language': 'en','url':vid_url,'info':info,'direct': False,'debridonly': False})
                 elif 'streamango' in vid_url:
                     try:  
                         source_html = client.request(vid_url,headers=headers)
                         source_string = re.compile('description" content="(.+?)"',re.DOTALL).findall(source_html)[0]
                         quality,info = source_utils.get_release_quality(source_string, vid_url)  
-                    except: quality='DVD'
+                    except:
+                        quality = 'DVD'
+                        info = []
                     sources.append({'source': 'Streamango','quality': quality,'language': 'en','url':vid_url,'info':info,'direct': False,'debridonly': False})
                 else:
                     if resolveurl.HostedMediaFile(vid_url):
@@ -78,7 +84,9 @@ class source:
                         sources.append({'source': host,'quality': quality,'language': 'en','url':vid_url,'info':info,'direct': False,'debridonly': False})
             return sources
         except:
-            return sources 
+            failure = traceback.format_exc()
+            log_utils.log('SolarMovie - Exception: \n' + str(failure))
+            return sources
 
     def resolve(self, url):
         return url

@@ -10,14 +10,15 @@
 
 # Addon Name: Placenta
 # Addon id: plugin.video.placenta
-# Addon Provider: Mr.Blamo
+# Addon Provider: MuadDib
 
-import re,urllib,urlparse
+# FIXME: Need to rewrite search system. Very unreliable on this site.
+
+import re,traceback,urllib,urlparse
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
-from resources.lib.modules import debrid
-                                              
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -27,23 +28,21 @@ class source:
         self.base_link = 'http://phazeddl.me'
         self.search_link = '/search/%s/feed/rss2/'
 
-
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
             url = {'imdb': imdb, 'title': title, 'year': year}
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('PhazeDDL - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
             sources = []
 
             if url == None: return sources
-
-            if debrid.status() == False: raise Exception()
 
             data = urlparse.parse_qs(url)
             data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
@@ -128,7 +127,7 @@ class source:
                     info = ' | '.join(info)
 
                     url = item[1]
-                    if any(x in url for x in ['.rar', '.zip', '.iso']): raise Exception()
+                    if any(x in url for x in ['.rar', '.zip', '.iso']): continue
                     url = client.replaceHTMLCodes(url)
                     url = url.encode('utf-8')
 
@@ -137,7 +136,7 @@ class source:
                     host = client.replaceHTMLCodes(host)
                     host = host.encode('utf-8')
 
-                    sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True})
+                    sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': False})
                 except:
                     pass
 
@@ -146,8 +145,9 @@ class source:
 
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('PhazeDDL - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         return url

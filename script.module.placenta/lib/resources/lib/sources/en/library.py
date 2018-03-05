@@ -12,12 +12,11 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-
-import urllib,urlparse,json
+import urllib,traceback,urlparse,json
 
 from resources.lib.modules import control
 from resources.lib.modules import cleantitle
-
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -29,12 +28,16 @@ class source:
         try:
             return urllib.urlencode({'imdb': imdb, 'title': title, 'localtitle': localtitle,'year': year})
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Library - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
             return urllib.urlencode({'imdb': imdb, 'tvdb': tvdb, 'tvshowtitle': tvshowtitle, 'localtvshowtitle': localtvshowtitle, 'year': year})
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Library - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -47,6 +50,8 @@ class source:
             url.update({'premiered': premiered, 'season': season, 'episode': episode})
             return urllib.urlencode(url)
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Library - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -130,6 +135,8 @@ class source:
 
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Library - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

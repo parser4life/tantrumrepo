@@ -12,7 +12,7 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,urlparse,random,urllib
+import re,traceback,urlparse,random,urllib
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
@@ -24,8 +24,8 @@ class source:
     def __init__(self):
         self.priority = 0
         self.language = ['en']
-        self.domains = ['icefilms.info','icefilms.unblocked.pro','icefilms1.unblocked.lol','icefilms1.unblocked.lol']
-        self.base_url = 'http://icefilms1.unblocked.lol/'
+        self.domains = ['icefilms.info','icefilms.unblocked.pro','icefilms.unblocked.vc','icefilms.unblocked.sh']
+        self.base_url = 'http://icefilms.unblocked.sh'
         self.search_link = urlparse.urljoin(self.base_url, 'search.php?q=%s+%s&x=0&y=0')
         self.list_url = urlparse.urljoin(self.base_url, 'membersonly/components/com_iceplayer/video.php?h=374&w=631&vid=%s&img=')
         self.post = 'id=%s&s=%s&iqs=&url=&m=%s&cap= &sec=%s&t=%s'
@@ -34,7 +34,7 @@ class source:
         try:
             clean_title = cleantitle.geturl(title)
             search_url = self.search_link % (clean_title.replace('-','+'), year)
-            headers = {'Host': 'http://icefilms1.unblocked.lol',
+            headers = {'Host': 'http://icefilms1.unblocked.sh',
                        'Cache-Control': 'max-age=0',
                         'Connection': 'keep-alive',
                         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
@@ -52,7 +52,9 @@ class source:
             url = url.split('?v=')[1]
             url = self.list_url % url
             return url
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('IceFilms - Exception: \n' + str(failure))
             return
             
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
@@ -66,6 +68,8 @@ class source:
             url = r[0]
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('IceFilms - Exception: \n' + str(failure))
             return
             
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -92,6 +96,8 @@ class source:
             url = self.list_url % url
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('IceFilms - Exception: \n' + str(failure))
             return
             
     def sources(self, url, hostDict, hostprDict):
@@ -191,7 +197,9 @@ class source:
                                 'debridonly': True
                             })
             return sources
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('IceFilms - Exception: \n' + str(failure))
             return
             
     def resolve(self, url):

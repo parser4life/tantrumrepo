@@ -12,11 +12,14 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,urllib,urlparse
+# FIXME: Some titles, such as Thor Ragnarok, cause exceptions and not pulling URL correct. Need to investigate.
+
+import re,traceback,urllib,urlparse
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import debrid
+from resources.lib.modules import log_utils
 from resources.lib.modules import source_utils
 
 class source:
@@ -33,6 +36,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Watch32 - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -47,7 +52,7 @@ class source:
             year = data['year']
 
             url = urlparse.urljoin(self.base_link, self.search_link) 
-            url = url % (title.replace(':', ' ').replace(' ','_'),year)
+            url = url % (title.replace(':', '').replace(' ','_'),year)
 
             search_results = client.request(url)
 
@@ -67,7 +72,9 @@ class source:
                 sources.append({'source': 'Googlelink', 'quality': quality, 'language': 'en', 'url': vid_url, 'direct': False, 'debridonly': False})
             return sources
         except:
-            return sources  
+            failure = traceback.format_exc()
+            log_utils.log('Watch32 - Exception: \n' + str(failure))
+            return sources
 
     def resolve(self, url):
         return url

@@ -12,9 +12,9 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import urlparse, urllib, json, base64, xbmc
+import urlparse,traceback,urllib,json,base64,xbmc
 
-from resources.lib.modules import client, cleantitle, source_utils, directstream
+from resources.lib.modules import client, cleantitle, log_utils, source_utils, directstream
 from resources.lib.modules import pyaes
 
 class source:
@@ -38,16 +38,18 @@ class source:
         try:
             url = {'title': title, 'year': year, 'imdb': imdb}
             return urllib.urlencode(url)
-
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('ShowBox - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
             data = {'tvshowtitle': tvshowtitle, 'year': year, 'imdb': imdb}
             return urllib.urlencode(data)
-
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('ShowBox - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -57,8 +59,9 @@ class source:
             data.update({'season': season, 'episode': episode, 'title': title, 'premiered': premiered})
 
             return urllib.urlencode(data)
-
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('ShowBox - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -101,15 +104,17 @@ class source:
                     pass
 
             return sources
-
-        except Exception:
-            return
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('ShowBox - Exception: \n' + str(failure))
+            return sources
 
     def resolve(self, url):
         try:
             return url
-
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('ShowBox - Exception: \n' + str(failure))
             return
 
     def __get_episode_url(self, data):
@@ -135,8 +140,9 @@ class source:
             url = urlparse.urljoin(self.base_link, path)
 
             return url
-
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('ShowBox - Exception: \n' + str(failure))
             return
 
     def __get_movie_url(self, data):
@@ -161,8 +167,9 @@ class source:
             url = urlparse.urljoin(self.base_link, path)
 
             return url
-
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('ShowBox - Exception: \n' + str(failure))
             return
 
     def __decrypt(self, ciphertext):
@@ -174,6 +181,7 @@ class source:
             plaintext += decrypter.feed()
 
             return plaintext
-
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('ShowBox - Exception: \n' + str(failure))
             return

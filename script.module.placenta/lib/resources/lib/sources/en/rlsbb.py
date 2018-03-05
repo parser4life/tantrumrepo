@@ -12,14 +12,13 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-
-import re,urllib,urlparse,json
-
+import re,traceback,urllib,urlparse,json
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
-from resources.lib.modules import debrid
 from resources.lib.modules import control
+from resources.lib.modules import debrid
+from resources.lib.modules import log_utils
 from resources.lib.modules import source_utils
 
 class source:
@@ -31,8 +30,6 @@ class source:
         self.search_base_link = 'http://search.rlsbb.ru'
         self.search_cookie = 'serach_mode=rlsbb'
         self.search_link = '/lib/search526049.php?phrase=%s&pindex=1&content=true'
-        self.search_link2 = '/search/%s'
-
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -40,8 +37,9 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('RLSBB - Exception: \n' + str(failure))
             return
-
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
@@ -49,8 +47,9 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('RLSBB - Exception: \n' + str(failure))
             return
-
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
@@ -62,8 +61,9 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('RLSBB - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -73,155 +73,97 @@ class source:
 
             if debrid.status() == False: raise Exception()
 
-
             data = urlparse.parse_qs(url)
             data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
 
             title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
+            hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
 
+            query = '%s S%02dE%02d' % (
+            data['tvshowtitle'], int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else '%s %s' % (
+            data['title'], data['year'])
+            query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', query)
 
-            posts = []
+            query = query.replace("&", "and")
+            query = query.replace("  ", " ")
+            query = query.replace(" ", "-")
 
-            if 'tvshowtitle' in data:
-                query = '%s %s S%02dE%02d' % (data['tvshowtitle'], int(data['year']), int(data['season']), int(data['episode']))
-                query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', ' ', query)
+            url = self.search_link % urllib.quote_plus(query)
+            url = urlparse.urljoin(self.base_link, url)
 
-                referer = self.search_link2 % urllib.quote_plus(query)
-                referer = urlparse.urljoin(self.search_base_link, referer)
+            url = "http://rlsbb.ru/" + query
 
-                url = self.search_link % urllib.quote_plus(query)
-                url = urlparse.urljoin(self.search_base_link, url)
-                
-                result = client.request(url, cookie=self.search_cookie, XHR=True, referer=referer)
-                try: posts += json.loads(re.findall('({.+?})$', result)[0])['results']
-                except: pass
-            else:
-                query = '%s %s' % (data['title'], data['year'])
-                query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', ' ', query)
+            if 'tvshowtitle' not in data: url = url + "-1080p"
 
-                referer = self.search_link2 % urllib.quote_plus(query)
-                referer = urlparse.urljoin(self.search_base_link, referer)
+            r = client.request(url)
 
-                url = self.search_link % urllib.quote_plus(query)
-                url = urlparse.urljoin(self.search_base_link, url)
+            if r == None and 'tvshowtitle' in data:
+                season = re.search('S(.*?)E', hdlr)
+                season = season.group(1)
+                query = title
+                query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', '', query)
+                query = query + "-S" + season
+                query = query.replace("&", "and")
+                query = query.replace("  ", " ")
+                query = query.replace(" ", "-")
+                url = "http://rlsbb.ru/" + query
+                r = client.request(url)
 
-                result = client.request(url, cookie=self.search_cookie, XHR=True, referer=referer)
-                try: posts += json.loads(re.findall('({.+?})$', result)[0])['results']
-                except: pass
-
-
-            links = [] ; dupes = []
+            posts = client.parseDOM(r, "div", attrs={"class": "content"})
+            hostDict = hostprDict + hostDict
+            items = []
             for post in posts:
                 try:
-                    name = post['post_title'] ; url = post['post_name']
-
-                    if not url in dupes:
-                        dupes.append(url)
-
-                        t = re.sub('(\.|\(|\[|\s)(\d{4}|S\d*E\d*|S\d*|3D)(\.|\)|\]|\s|)(.+|)', '', name)
-                        if not cleantitle.get(title) in cleantitle.get(t): raise Exception()
-
-                      
-                        try: y = re.findall('[\.|\(|\[|\s](S\d*E\d*|S\d*)[\.|\)|\]|\s]', name)[-1].upper()
-                        except: y = re.findall('[\.|\(|\[|\s](\d{4}|S\d*E\d*|S\d*)[\.|\)|\]|\s]', name)[-1].upper()
-
-                        if 'S' in y and 'E' in y: cat = 'episode'
-                        elif 'S' in y: cat = 'tvshow'
-                        elif y.isdigit(): cat = 'movie'
-
-                        if cat == 'movie': hdlr = data['year']
-                        elif cat == 'episode': hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode']))
-                        elif cat == 'tvshow': hdlr = 'S%02d' % int(data['season'])
-
-                        if not y == hdlr: raise Exception()
-
-                        items = []
-
-                        content = post['post_content']
-
-                        try: items += zip([i for i in client.parseDOM(content, 'p') if 'Release Name:' in i], [i for i in client.parseDOM(content, 'p') if '<strong>Download' in i])
-                        except: pass
-
-                        try: items += client.parseDOM(content, 'p', attrs = {'style': '.+?'})
-                        except: pass
-
-                        for item in items:
-                            try:
-                                if type(item) == tuple: item = '######URL######'.join(item)
-
-                                fmt = re.sub('(.+)(\.|\(|\[|\s)(\d{4}|S\d*E\d*|S\d*)(\.|\)|\]|\s)', '', name.upper())
-                                fmt = re.split('\.|\(|\)|\[|\]|\s|\-', fmt)
-                                fmt = [i.lower() for i in fmt]
-
-                                if any(i.endswith(('subs', 'sub', 'dubbed', 'dub')) for i in fmt): raise Exception()
-                                if any(i in ['extras'] for i in fmt): raise Exception()
-
-                                if '1080p' in fmt: quality = '1080p'
-                                elif '720p' in fmt: quality = '720p'
-                                else: quality = 'SD'
-                                if any(i in ['dvdscr', 'r5', 'r6'] for i in fmt): quality = 'SCR'
-                                elif any(i in ['camrip', 'tsrip', 'hdcam', 'hdts', 'dvdcam', 'dvdts', 'cam', 'telesync', 'ts'] for i in fmt): quality = 'CAM'
-
-                                quality, infoo = source_utils.get_release_quality(name, i[1])
-
-                                info = []
-
-                                if '3d' in fmt: info.append('3D')
-
-                                try:
-                                    if cat == 'tvshow': raise Exception()
-                                    size = re.findall('(\d+(?:\.|/,|)\d+(?:\s+|)(?:GB|GiB|MB|MiB))', item)[0].strip()
-                                    div = 1 if size.endswith(('GB', 'GiB')) else 1024
-                                    size = float(re.sub('[^0-9|/.|/,]', '', size))/div
-                                    size = '%.2f GB' % size
-                                    info.append(size)
-                                except:
-                                    pass
-
-                                info = ' | '.join(info)
-
-                                url = item.rsplit('######URL######')[-1]
-                                url = zip(client.parseDOM(url, 'a'), client.parseDOM(url, 'a', ret='href'))
-
-                                for i in url: links.append({'url': i[1], 'quality': quality, 'info': info, 'host': i[0], 'cat': cat})
-                            except:
-                                pass
-
+                    u = client.parseDOM(post, 'a', ret='href')
+                    for i in u:
+                        try:
+                            name = str(i)
+                            if hdlr in name.upper(): items.append(name)
+                        except:
+                            pass
                 except:
                     pass
 
+            seen_urls = set()
 
-            check = [i for i in links if not i['quality'] == 'CAM']
-            if len(check) > 0: links = check
-
-            hostDict = hostprDict + hostDict
-
-            for i in links:
+            for item in items:
                 try:
-                    url = i['url']
+                    info = []
+
+                    url = str(item)
                     url = client.replaceHTMLCodes(url)
                     url = url.encode('utf-8')
 
-                    if i['cat'] == 'tvshow':
-                        if not i['quality'] in ['1080p', 'HD']: raise Exception()
-                        if not any(i['host'].lower() in x for x in hostDict): raise Exception()
-                        url = client.request(url)
-                        url = client.parseDOM(url, 'ol')[0]
-                        url = client.parseDOM(url, 'div', attrs = {'style': '.+?'})[int(data['episode'])-1]
+                    if url in seen_urls: continue
+                    seen_urls.add(url)
 
-                    host = re.findall('([\w]+[.][\w]+)$', urlparse.urlparse(url.strip().lower()).netloc)[0]
+                    host = url.replace("\\", "")
+                    host2 = host.strip('"')
+                    host = re.findall('([\w]+[.][\w]+)$', urlparse.urlparse(host2.strip().lower()).netloc)[0]
+
                     if not host in hostDict: raise Exception()
+                    if any(x in host2 for x in ['.rar', '.zip', '.iso']): continue
+
+                    if '720p' in host2:
+                        quality = 'HD'
+                    elif '1080p' in host2:
+                        quality = '1080p'
+                    else:
+                        quality = 'SD'
+
+                    info = ' | '.join(info)
                     host = client.replaceHTMLCodes(host)
                     host = host.encode('utf-8')
-
-                    sources.append({'source': host, 'quality': i['quality'], 'language': 'en', 'url': url, 'info': i['info'], 'direct': False, 'debridonly': True})
+                    sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': host2, 'info': info, 'direct': False, 'debridonly': True})
                 except:
                     pass
-
+            check = [i for i in sources if not i['quality'] == 'CAM']
+            if check: sources = check
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('RLSBB - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         return url

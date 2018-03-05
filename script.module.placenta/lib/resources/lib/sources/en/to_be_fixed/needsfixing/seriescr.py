@@ -12,15 +12,14 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-
-import re,urllib,urlparse
+import re,traceback,urllib,urlparse
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import source_utils
 from resources.lib.modules import debrid
 from resources.lib.modules import dom_parser2
-
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -30,13 +29,14 @@ class source:
         self.base_link = 'http://seriescr.com'
         self.search_link = '/search/%s/feed/rss2/'
 
-
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
             url = {'imdb': imdb, 'tvdb': tvdb, 'tvshowtitle': tvshowtitle, 'year': year}
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SeriesCR - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -49,6 +49,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SeriesCR - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -86,14 +88,12 @@ class source:
                     info = ' | '.join(info)
 
                     valid, host = source_utils.is_host_valid(url, hostDict)
-                    sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info,
-                                    'direct': False, 'debridonly': True})
-
-
+                    sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': url, 'info': info, 'direct': False, 'debridonly': True})
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SeriesCR - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         return url

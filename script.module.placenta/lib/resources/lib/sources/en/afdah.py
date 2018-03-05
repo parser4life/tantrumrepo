@@ -12,7 +12,7 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re, json, urllib, urlparse, base64
+import re,traceback,json,urllib,urlparse,base64
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
@@ -34,8 +34,9 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('AFDAH - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         sources = []
@@ -74,6 +75,8 @@ class source:
                     return sources
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('AFDAH - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

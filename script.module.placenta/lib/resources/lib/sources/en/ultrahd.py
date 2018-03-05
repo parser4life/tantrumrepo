@@ -12,13 +12,14 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,urllib,urlparse
+import re,traceback,urllib,urlparse
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import debrid
-from resources.lib.modules import source_utils
 from resources.lib.modules import dom_parser2
+from resources.lib.modules import log_utils
+from resources.lib.modules import source_utils
 
 class source:
     def __init__(self):
@@ -34,6 +35,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('UltraHD - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -129,8 +132,9 @@ class source:
 
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('UltraHD - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         return url

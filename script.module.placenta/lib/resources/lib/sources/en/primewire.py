@@ -13,11 +13,12 @@
 # Addon Provider: MuadDib
 
 
-import re,urllib,urlparse,base64,xbmc
+import re,traceback,urllib,urlparse,base64,xbmc
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import proxy
+from resources.lib.modules import log_utils
 from resources.lib.modules import source_utils
 
 class source:
@@ -29,7 +30,6 @@ class source:
         self.key_link = '/index.php?search'
         self.moviesearch_link = '/index.php?search_keywords=%s&key=%s&search_section=1'
         self.tvsearch_link = '/index.php?search_keywords=%s&key=%s&search_section=2'
-
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -74,8 +74,9 @@ class source:
             url = url.encode('utf-8')
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Primewire - Exception: \n' + str(failure))
             return
-
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
@@ -120,8 +121,9 @@ class source:
             url = url.encode('utf-8')
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Primewire - Exception: \n' + str(failure))
             return
-
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
@@ -150,8 +152,9 @@ class source:
             url = url.encode('utf-8')
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Primewire - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -187,8 +190,9 @@ class source:
 
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Primewire - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         return url

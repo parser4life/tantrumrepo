@@ -12,16 +12,15 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re
-import urlparse
-import unicodedata
+import re,traceback,urlparse,unicodedata
 
 from resources.lib.modules import cache
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
-from resources.lib.modules import dom_parser
-from resources.lib.modules import source_utils
 from resources.lib.modules import directstream
+from resources.lib.modules import dom_parser
+from resources.lib.modules import log_utils
+from resources.lib.modules import source_utils
 
 class source:
     def __init__(self):
@@ -41,6 +40,8 @@ class source:
 
             return source_utils.strip_domain(url)
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SezonlukDizi - Exception: \n' + str(failure))
             return
 
     def sezonlukdizi_tvcache(self):
@@ -60,7 +61,6 @@ class source:
             result = [(i[0][0], i[1][0]) for i in result if len(i[0]) > 0 and len(i[1]) > 0]
             result = [(re.compile('/diziler(/.+?)(?://|\.|$)').findall(i[0]), re.sub('&#\d*;', '', i[1])) for i in result]
             result = [(i[0][0] + '/', cleantitle.query(self.lat2asc(i[1]))) for i in result if len(i[0]) > 0]
-
             return result
         except:
             return []
@@ -139,6 +139,8 @@ class source:
 
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SezonlukDizi - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

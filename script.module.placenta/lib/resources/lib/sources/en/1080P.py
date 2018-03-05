@@ -13,7 +13,7 @@
 # Addon Provider: MuadDib
 
 
-import re,urllib,urlparse,json,base64
+import re,traceback,urllib,urlparse,json,base64
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
@@ -28,13 +28,14 @@ class source:
         self.base_link = 'https://1080pmovie.com'
         self.search_link = '%s/wp-json/wp/v2/posts?search=%s'
 
-
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
             url = {'imdb': imdb, 'title': title, 'year': year}
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('1080PMovies - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -63,10 +64,10 @@ class source:
                         valid, host = source_utils.is_host_valid(final_url, hostDict)
                         sources.append({'source':host,'quality':'1080p','language': 'en','url':final_url,'info':[],'direct':False,'debridonly':False})
             return sources
-        except Exception, argument:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('1080PMovies - Exception: \n' + str(failure))
             return sources
-
-
 
     def resolve(self, url):
         return directstream.googlepass(url)

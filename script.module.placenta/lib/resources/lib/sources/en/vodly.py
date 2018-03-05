@@ -12,12 +12,13 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re, urlparse, urllib, base64
+import re,traceback,urlparse,urllib,base64
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import cache
 from resources.lib.modules import dom_parser2
+from resources.lib.modules import log_utils
 from resources.lib.modules import source_utils
 
 class source:
@@ -26,7 +27,6 @@ class source:
         self.language = ['en']
         self.domains = ['vodly.us', 'vodly.unblocked.tv']
         self.base_link = 'http://vodly.us'
-        #self.search_link = '/search?s=%s'
         self.search_link = '%s/search?q=vodly.us+%s+%s'
         self.goog = 'https://www.google.co.uk'
 
@@ -50,11 +50,13 @@ class source:
                                 return url
             return
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Vodly - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
+            if url is None: return sources
             sources = []
 
             result = client.request(url)
@@ -88,7 +90,9 @@ class source:
                     except:
                         pass
             return sources
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('Vodly - Exception: \n' + str(failure))
             return
 
     def resolve(self, url):

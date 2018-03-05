@@ -12,15 +12,16 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
+# FIXME: Now has movies. Should we scrape it for movies as well?
 
-import re,urllib,urlparse,json,base64
+import re,traceback,urllib,urlparse,json,base64
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import source_utils
 from resources.lib.modules import dom_parser
 from resources.lib.modules import directstream
-#from resources.lib.modules import log_utils
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -36,6 +37,8 @@ class source:
             self.tvshowtitle = tvshowtitle
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('WatchSeries - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -53,6 +56,8 @@ class source:
             url = get_ep.encode('utf-8')
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('WatchSeries - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -102,6 +107,8 @@ class source:
                         pass
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('WatchSeries - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

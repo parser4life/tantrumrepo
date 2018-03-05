@@ -12,7 +12,7 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,urllib,urlparse,json,base64,time
+import re,traceback,urllib,urlparse,json,base64,time
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import dom_parser2
@@ -32,6 +32,8 @@ class source:
             url = urlparse.urljoin(self.base_link, (self.search_link %(clean_title,year)))
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Flixanity - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
@@ -41,6 +43,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Flixanity - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -58,6 +62,8 @@ class source:
                     url = i.attrs['href']
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Flixanity - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -80,7 +86,9 @@ class source:
                 sources.append({'source': i.content, 'quality': quality, 'language': 'en', 'url': url, 'direct': False, 'debridonly': False})
             return sources
         except:
-            return sources
+            failure = traceback.format_exc()
+            log_utils.log('Flixanity - Exception: \n' + str(failure))
+            return
 
     def resolve(self, url):
         try:
@@ -100,4 +108,6 @@ class source:
             url =  "https:%s" %p2["data"].replace("\/","/")
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Flixanity - Exception: \n' + str(failure))
             return

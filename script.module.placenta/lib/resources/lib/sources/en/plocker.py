@@ -14,21 +14,14 @@
 
 # Kudos on updates by FilmNet
 
-import re
-import urllib
-import urlparse
-import json
-import random, time
+import re,traceback,urllib,urlparse,json,random, time
 
 from resources.lib.modules import client, cleantitle, directstream
 from resources.lib.modules import source_utils
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
-        '''
-        Constructor defines instances variables
-
-        '''
         self.priority = 1
         self.language = ['en']
         self.domains = ['putlockertv.to','putlocker.se']
@@ -82,7 +75,9 @@ class source:
             }
             url = urllib.urlencode(data)
             return url
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('PLocker - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
@@ -95,7 +90,9 @@ class source:
             }
             url = urllib.urlencode(data)
             return url
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('PLocker - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -152,7 +149,9 @@ class source:
             })
             url = urllib.urlencode(data)
             return url
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('PLocker - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -221,8 +220,9 @@ class source:
                             'direct': False, 'debridonly': False})
                 except: pass
             return sources
-
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('PLocker - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):
@@ -238,7 +238,9 @@ class source:
                 if url:
                     break
             return url
-        except Exception:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('PLocker - Exception: \n' + str(failure))
             return
         
     def ___token(self, params, It):

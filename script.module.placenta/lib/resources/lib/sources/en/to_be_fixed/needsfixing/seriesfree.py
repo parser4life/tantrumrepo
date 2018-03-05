@@ -12,16 +12,13 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-
-import re,urllib,urlparse,json,base64
+import re,traceback,urllib,urlparse,json,base64
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import source_utils
 from resources.lib.modules import dom_parser
-#from resources.lib.modules import log_utils
-
-
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -35,7 +32,6 @@ class source:
         try:
             query = self.search_link % urllib.quote_plus(cleantitle.query(tvshowtitle))
             result = client.request(query)
-            #tvshowtitle = cleantitle.get(tvshowtitle)
             t = [tvshowtitle] + source_utils.aliases_to_array(aliases)
             t = [cleantitle.get(i) for i in set(t) if i]
             result = re.compile('itemprop="url"\s+href="([^"]+).*?itemprop="name"\s+class="serie-title">([^<]+)', re.DOTALL).findall(result)
@@ -45,8 +41,9 @@ class source:
             url = url.encode('utf-8')
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SeriesFree - Exception: \n' + str(failure))
             return
-
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
@@ -65,8 +62,9 @@ class source:
             url = url.encode('utf-8')
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SeriesFree - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -93,15 +91,13 @@ class source:
                     if not valid: continue
                     urls, host, direct = source_utils.check_directstreams(r, hoster)
                     for x in urls: sources.append({'source': host, 'quality': x['quality'], 'language': 'en', 'url': x['url'], 'direct': direct, 'debridonly': False})
-                    
                 except:
                     pass           
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('SeriesFree - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         return url
-
-

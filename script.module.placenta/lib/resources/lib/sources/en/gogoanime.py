@@ -13,7 +13,7 @@
 # Addon Provider: MuadDib
 
 
-import re,urllib,urlparse,json
+import re,traceback,urllib,urlparse,json
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
@@ -58,8 +58,9 @@ class source:
             url = url.encode('utf-8')
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('GoGoAnime - Exception: \n' + str(failure))
             return
-
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
@@ -72,8 +73,9 @@ class source:
             url = self.episode_link % (url, num)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('GoGoAnime - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -102,8 +104,9 @@ class source:
 
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('GoGoAnime - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         return directstream.googlepass(url)

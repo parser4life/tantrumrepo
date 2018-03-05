@@ -75,6 +75,8 @@ class navigator:
             self.addDirectoryItem(32009, 'downloadNavigator', 'downloads.png', 'DefaultFolder.png')
 
         self.addDirectoryItem(32010, 'searchNavigator', 'search.png', 'DefaultFolder.png')
+        self.addDirectoryItem('[COLOR=orange]Follow on Twitter: @tantrumdev and @MRBlamoforkodi[/COLOR]', 'sectionItem', 'icon.png', 'DefaultAddonProgram.png')
+        self.addDirectoryItem('[COLOR=orange]Can find on YouTube at http://youtube.tantrumtv.com[/COLOR]', 'sectionItem', 'icon.png', 'DefaultAddonProgram.png')
 
         self.endDirectory()
 

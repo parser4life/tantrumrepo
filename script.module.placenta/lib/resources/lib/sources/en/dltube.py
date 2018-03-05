@@ -12,12 +12,11 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,base64,urllib,urlparse,json
+import re,traceback,base64,urllib,urlparse,json
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
-from resources.lib.modules import debrid
-#from resources.lib.modules import log_utils
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -28,11 +27,8 @@ class source:
         self.search_link = '%ssearch/%s'
         self.download_link = '/movies/play_online'
 
-
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
-            if debrid.status() == False: raise Exception()
-
             query = self.search_link % (self.base_link, urllib.quote_plus(title).replace('+', '-'))
             html = client.request(query, XHR=True)
 
@@ -45,14 +41,14 @@ class source:
                     if year in date:
                         return new_url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('DLTube - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
             sources = []
             if url == None: return sources
-            if debrid.status() == False: raise Exception()
 
             r = client.request(url)
             mov_id = re.compile('id=movie value=(.+?)/>',re.DOTALL).findall(r)[0]
@@ -83,8 +79,9 @@ class source:
 
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('DLTube - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         try:
@@ -92,5 +89,3 @@ class source:
             return url
         except:
             return
-
-

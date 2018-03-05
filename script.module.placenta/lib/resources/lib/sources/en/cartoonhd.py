@@ -12,7 +12,7 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,urllib,urlparse,json,base64,time,xbmc
+import re,traceback,urllib,urlparse,json,base64,time,xbmc
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
@@ -34,6 +34,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CartoonHD - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
@@ -43,8 +45,9 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CartoonHD - Exception: \n' + str(failure))
             return
-
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
@@ -55,6 +58,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CartoonHD - Exception: \n' + str(failure))
             return
 
     def searchShow(self, title, season, episode, aliases, headers):
@@ -65,6 +70,8 @@ class source:
                 if not url == None and url != self.base_link: break
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CartoonHD - Exception: \n' + str(failure))
             return
 
     def searchMovie(self, title, year, aliases, headers):
@@ -81,8 +88,9 @@ class source:
 
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CartoonHD - Exception: \n' + str(failure))
             return
-
 
     def sources(self, url, hostDict, hostprDict):
         try:
@@ -206,8 +214,9 @@ class source:
                     pass
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CartoonHD - Exception: \n' + str(failure))
             return sources
-
 
     def resolve(self, url):
         if 'google' in url and not 'googleapis' in url:

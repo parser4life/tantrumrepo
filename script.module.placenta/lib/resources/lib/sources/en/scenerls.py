@@ -23,20 +23,10 @@ class source:
     def __init__(self):
         self.priority = 1
         self.language = ['en']
-        self.domains = ['wrzcraft.net']
-        self.base_link = 'http://wrzcraft.net'
+        self.domains = ['scene-rls.com','scene-rls.net']
+        self.base_link = 'http://scene-rls.net/'
         self.search_link = '/search/%s/feed/rss2/'
-
-
-    def movie(self, imdb, title, localtitle, aliases, year):
-        try:
-            url = {'imdb': imdb, 'title': title, 'year': year}
-            url = urllib.urlencode(url)
-            return url
-        except:
-            failure = traceback.format_exc()
-            log_utils.log('WrzCraft - Exception: \n' + str(failure))
-            return
+        self.search_link_2 = '/?s=%s&submit=Find'
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
         try:
@@ -45,7 +35,7 @@ class source:
             return url
         except:
             failure = traceback.format_exc()
-            log_utils.log('WrzCraft - Exception: \n' + str(failure))
+            log_utils.log('SceneRls - Exception: \n' + str(failure))
             return
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
@@ -59,7 +49,7 @@ class source:
             return url
         except:
             failure = traceback.format_exc()
-            log_utils.log('WrzCraft - Exception: \n' + str(failure))
+            log_utils.log('SceneRls - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -69,6 +59,8 @@ class source:
             if url == None: return sources
 
             if debrid.status() == False: raise Exception()
+
+            hostDict = hostprDict + hostDict
 
             data = urlparse.parse_qs(url)
             data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
@@ -80,36 +72,70 @@ class source:
             query = '%s S%02dE%02d' % (data['tvshowtitle'], int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else '%s %s' % (data['title'], data['year'])
             query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', ' ', query)
 
-            url = self.search_link % urllib.quote_plus(query)
-            url = urlparse.urljoin(self.base_link, url)
+            try:
+                feed = True
 
-            r = client.request(url)
+                url = self.search_link % urllib.quote_plus(query)
+                url = urlparse.urljoin(self.base_link, url)
 
-            posts = client.parseDOM(r, 'item')
+                r = client.request(url)
+                if r == None: feed = False
 
-            hostDict = hostprDict + hostDict
+                posts = client.parseDOM(r, 'item')
+                if not posts: feed = False
 
-            items = []
+                items = []
 
-            for post in posts:
-                try:
-                    t = client.parseDOM(post, 'title')[0]
+                for post in posts:
+                    try:
+                        u = client.parseDOM(post, 'enclosure', ret='url')
+                        u = [(i.strip('/').split('/')[-1], i) for i in u]
+                        items += u
+                    except:
+                        pass
+            except:
+                pass
 
-                    c = client.parseDOM(post, 'content.+?')[0]
+            try:
+                if feed == True: raise Exception()
 
-                    u = client.parseDOM(c, 'p')
-                    u = [client.parseDOM(i, 'a', ret='href') for i in u]
-                    u = [i[0] for i in u if len(i) == 1]
-                    if not u: raise Exception()
+                url = self.search_link_2 % urllib.quote_plus(query)
+                url = urlparse.urljoin(self.base_link, url)
 
-                    if 'tvshowtitle' in data:
-                         u = [(re.sub('(720p|1080p)', '', t) + ' ' + [x for x in i.strip('//').split('/')][-1], i) for i in u]
-                    else:
-                         u = [(t, i) for i in u]
+                r = client.request(url)
 
-                    items += u
-                except:
-                    pass
+                posts = client.parseDOM(r, 'div', attrs={'class': 'post'})
+
+                items = [] ; dupes = []
+
+                for post in posts:
+                    try:
+                        t = client.parseDOM(post, 'a')[0]
+                        t = re.sub('<.+?>|</.+?>', '', t)
+
+                        x = re.sub('(\.|\(|\[|\s)(\d{4}|S\d*E\d*|S\d*|3D)(\.|\)|\]|\s|)(.+|)', '', t)
+                        if not cleantitle.get(title) in cleantitle.get(x): raise Exception()
+                        y = re.findall('[\.|\(|\[|\s](\d{4}|S\d*E\d*|S\d*)[\.|\)|\]|\s]', t)[-1].upper()
+                        if not y == hdlr: raise Exception()
+
+                        fmt = re.sub('(.+)(\.|\(|\[|\s)(\d{4}|S\d*E\d*|S\d*)(\.|\)|\]|\s)', '', t.upper())
+                        fmt = re.split('\.|\(|\)|\[|\]|\s|\-', fmt)
+                        fmt = [i.lower() for i in fmt]
+                        if not any(i in ['1080p', '720p'] for i in fmt): raise Exception()
+
+                        if len(dupes) > 2: raise Exception()
+                        dupes += [x]
+
+                        u = client.parseDOM(post, 'a', ret='href')[0]
+
+                        r = client.request(u)
+                        u = client.parseDOM(r, 'a', ret='href')
+                        u = [(i.strip('/').split('/')[-1], i) for i in u]
+                        items += u
+                    except:
+                        pass
+            except:
+                pass
 
             for item in items:
                 try:
@@ -117,41 +143,14 @@ class source:
                     name = client.replaceHTMLCodes(name)
 
                     t = re.sub('(\.|\(|\[|\s)(\d{4}|S\d*E\d*|S\d*|3D)(\.|\)|\]|\s|)(.+|)', '', name)
+
                     if not cleantitle.get(t) == cleantitle.get(title): raise Exception()
 
                     y = re.findall('[\.|\(|\[|\s](\d{4}|S\d*E\d*|S\d*)[\.|\)|\]|\s]', name)[-1].upper()
 
                     if not y == hdlr: raise Exception()
 
-                    fmt = re.sub('(.+)(\.|\(|\[|\s)(\d{4}|S\d*E\d*|S\d*)(\.|\)|\]|\s)', '', name.upper())
-                    fmt = re.split('\.|\(|\)|\[|\]|\s|\-', fmt)
-                    fmt = [i.lower() for i in fmt]
-
-                    if any(i.endswith(('subs', 'sub', 'dubbed', 'dub')) for i in fmt): raise Exception()
-                    if any(i in ['extras'] for i in fmt): raise Exception()
-
-                    if '1080p' in fmt: quality = '1080p'
-                    elif '720p' in fmt: quality = 'HD'
-                    else: quality = 'SD'
-                    if any(i in ['dvdscr', 'r5', 'r6'] for i in fmt): quality = 'SCR'
-                    elif any(i in ['camrip', 'tsrip', 'hdcam', 'hdts', 'dvdcam', 'dvdts', 'cam', 'telesync', 'ts'] for i in fmt): quality = 'CAM'
-
-                    info = []
-
-                    if '3d' in fmt: info.append('3D')
-
-                    try:
-                        size = re.findall('((?:\d+\.\d+|\d+\,\d+|\d+) (?:GB|GiB|MB|MiB))', item[2])[-1]
-                        div = 1 if size.endswith(('GB', 'GiB')) else 1024
-                        size = float(re.sub('[^0-9|/.|/,]', '', size))/div
-                        size = '%.2f GB' % size
-                        info.append(size)
-                    except:
-                        pass
-
-                    if any(i in ['hevc', 'h265', 'x265'] for i in fmt): info.append('HEVC')
-
-                    info = ' | '.join(info)
+                    quality,info = source_utils.get_release_quality(name, item[1])
 
                     url = item[1]
                     if any(x in url for x in ['.rar', '.zip', '.iso']): raise Exception()
@@ -167,13 +166,10 @@ class source:
                 except:
                     pass
 
-            check = [i for i in sources if not i['quality'] == 'CAM']
-            if check: sources = check
-
             return sources
         except:
             failure = traceback.format_exc()
-            log_utils.log('WrzCraft - Exception: \n' + str(failure))
+            log_utils.log('SceneRls - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

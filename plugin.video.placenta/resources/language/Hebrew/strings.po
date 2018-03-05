@@ -909,7 +909,7 @@ msgid "Getting genre information from Trakt"
 msgstr "מקבל מידע על סגנון מטראקט"
 
 msgctxt "#32600"
-msgid "Preparing sources"
+msgid "Preparing the speculum"
 msgstr "מכין מקורות"
 
 msgctxt "#32601"

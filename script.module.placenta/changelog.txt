@@ -1,6 +1,11 @@
 Placenta Module Changelog:
 Currently maintained by mr blamo and Muad'Dib
 
+ver 1.2.3
+    - Scraper Updates
+    - Updated CFScrape to latest from author
+    - Some garbage scrapers re-added, but disabled by default- Up to you if you want to use them
+
 ver 1.2.2
     - Fixed some Cache init issues
     - Added support for Season 0/Specials to Browse Series

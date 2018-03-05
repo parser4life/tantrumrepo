@@ -12,10 +12,11 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,urllib,urlparse
+import re,traceback,urllib,urlparse
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -38,6 +39,8 @@ class source:
                         return item_url
             return
         except:
+            failure = traceback.format_exc()
+            log_utils.log('VexMovies - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -65,6 +68,8 @@ class source:
                     sources.append({'source': host, 'quality': quality, 'language': 'en', 'url': link, 'direct': False, 'debridonly': False})
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('VexMovies - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

@@ -12,11 +12,12 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re,urllib,urlparse
+import re,traceback,urllib,urlparse
 import resolveurl as urlresolver
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -39,46 +40,25 @@ class source:
                         return item_url
             return
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CoolMovieZone - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
         try:
             sources = []
             if url == None: return sources
+
             html = client.request(url)
             Links = re.compile('<td align="center"><strong><a href="(.+?)"',re.DOTALL).findall(html)
             for link in Links:
-                if 'openload' in link:
-                    try:
-                        get_res = client.request(link)
-                        rez = re.compile('target="_blank">(.+?)</a></td>',re.DOTALL).findall(get_res)[0]
-                        if 'High-Definition' in rez:
-                            quality = 'HD'
-                        elif '720p' in rez:
-                            quality='720p'
-                        else:
-                            quality='DVD'
-                    except: quality='DVD'
-                    sources.append({'source': 'Openload', 'quality': quality, 'language': 'en', 'url': link, 'direct': False, 'debridonly': False})
-                elif 'streamango' in link:
-                    try:
-                        get_res = client.request(link)
-                        rez = re.compile('target="_blank">(.+?)</a></td>',re.DOTALL).findall(get_res)[0]
-                        if 'High-Definition' in rez:
-                            quality = 'HD'
-                        elif '720' in rez:
-                            quality='720p'
-                        else:
-                            quality='DVD'
-                    except: quality='DVD'
-                    sources.append({'source': 'Streamango', 'quality': quality, 'language': 'en', 'url': link, 'direct': False, 'debridonly': False})
-                else:
-                    if urlresolver.HostedMediaFile(link):
-                        host = link.split('//')[1].replace('www.','')
-                        host = host.split('/')[0].split('.')[0].title()
-                        sources.append({'source': host, 'quality': 'DVD', 'language': 'en', 'url': link, 'direct': False, 'debridonly': False})
+                host = link.split('//')[1].replace('www.','')
+                host = host.split('/')[0].split('.')[0].title()
+                sources.append({'source': host, 'quality': 'SD', 'language': 'en', 'url': link, 'direct': False, 'debridonly': False})
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CoolMovieZone - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

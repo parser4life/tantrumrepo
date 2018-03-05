@@ -12,10 +12,11 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-import re, requests, base64, urllib, urlparse
+import re,requests,traceback,base64,urllib,urlparse
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
+from resources.lib.modules import log_utils
 
 class source:
     def __init__(self):
@@ -40,6 +41,8 @@ class source:
                     continue
                 return item_url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Popcorn - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, hostprDict):
@@ -69,6 +72,8 @@ class source:
             except:pass
             return sources
         except:
+            failure = traceback.format_exc()
+            log_utils.log('Popcorn - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):

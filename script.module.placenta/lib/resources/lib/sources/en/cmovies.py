@@ -13,7 +13,7 @@
 # Addon Provider: MuadDib
 
 
-import re,urllib,urlparse,json,base64,time,xbmc
+import re,traceback,urllib,urlparse,json,base64,time,xbmc
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
@@ -45,6 +45,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CMoviesHD - Exception: \n' + str(failure))
             return
 
     def tvshow(self, imdb, tvdb, tvshowtitle, localtvshowtitle, aliases, year):
@@ -54,8 +56,9 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CMoviesHD - Exception: \n' + str(failure))
             return
-
 
     def episode(self, url, imdb, tvdb, title, premiered, season, episode):
         try:
@@ -66,6 +69,8 @@ class source:
             url = urllib.urlencode(url)
             return url
         except:
+            failure = traceback.format_exc()
+            log_utils.log('CMoviesHD - Exception: \n' + str(failure))
             return
 
     def sources(self, url, hostDict, locDict):
@@ -175,7 +180,9 @@ class source:
                     pass
 
             return sources
-        except Exception as e:
+        except:
+            failure = traceback.format_exc()
+            log_utils.log('CMoviesHD - Exception: \n' + str(failure))
             return sources
 
     def resolve(self, url):
