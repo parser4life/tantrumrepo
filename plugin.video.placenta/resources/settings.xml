@@ -103,6 +103,7 @@
         <setting id="provider.gogoanime" type="bool" label="GOGOANIME" default="true" />
         <setting id="provider.hdmega" type="bool" label="HDMEGA" default="true" />
         <setting id="provider.icefilms" type="bool" label="ICEFILMS" default="true" />
+        <setting id="provider.icouchtuner" type="bool" label="ICOUCHTUNER" default="true" />
         <setting id="provider.library" type="bool" label="LIBRARY" default="true" />
         <setting id="provider.movie4kto" type="bool" label="MOVIE4KTO" default="false" />
         <setting id="provider.phazeddl" type="bool" label="PHAZEDLL" default="true" />

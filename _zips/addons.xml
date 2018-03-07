@@ -220,25 +220,6 @@ This is a Non-profit resource, organized solely for educational purposes which i
 	</extension>
 </addon>
 
-<addon id="plugin.video.prosport" name="Sports Hub" version="0.91" provider-name="MuadDib">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0" />
-     <import addon="script.module.requests" version="2.9.1" />
-     <import addon="script.module.urlresolver" version="4.0.12" />
-     <import addon="script.module.liveresolver" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" provides="video" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>Live HD sport streams from reddit</summary>
-    <description>Live HD sport streams from reddit. Massive props go out gerikss, podgod, and iCanuck for their original work</description>
-    <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
-    <platform>all</platform>
-    <language>en</language>
-  </extension>
-</addon>
-
 <addon id="plugin.video.tantrumtvchannel" name="Tantrum.TV Videos" version="1.0.2" provider-name="MuadDib">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
