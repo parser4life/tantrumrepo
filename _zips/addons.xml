@@ -205,7 +205,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="plugin.video.placenta" version="1.1.9" name="Placenta" provider-name="Team Afterbirth">
+<addon id="plugin.video.placenta" version="1.2.0" name="Placenta" provider-name="Team Afterbirth">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0" />
 		<import addon="script.module.placenta" />
@@ -517,7 +517,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="script.module.placenta" name="Placenta Module" version="1.2.3" provider-name="Team Afterbirth">
+<addon id="script.module.placenta" name="Placenta Module" version="1.2.4" provider-name="Team Afterbirth">
 	<requires>
 		<import addon="xbmc.python" version="2.1.0" />
 	</requires>
@@ -697,7 +697,7 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="script.placenta.artwork" version="1.0.5" name="Placenta Artwork" provider-name="Team Afterbirth">
+<addon id="script.placenta.artwork" version="1.0.6" name="Placenta Artwork" provider-name="Team Afterbirth">
 	<requires>
 		<import addon="xbmc.python" version="2.19.0"/>
 	</requires>

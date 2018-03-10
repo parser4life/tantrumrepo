@@ -3,6 +3,7 @@
 """ Modified by Rodrigo@XMBCHUB to zip plugins/repositories to a "zip" folder """
 """ Modified by BartOtten: create a repository addon, skip folders without addon.xml, user config file """
 """ Modified by MuadDib: Include copying of addon.xml, icon.png, and fanart.jpg when present in addon folders """
+""" Modified by MuadDib: Ignores PSD files, so you can keep them with the addons where needed and not zip them up in releases """
 """ This file is "as is", without any warranty whatsoever. Use as own risk """
 
 import os
@@ -106,7 +107,7 @@ class Generator:
                     addonid = parent.getAttribute("id")
                 self._generate_zip_file(addon, version, addonid)
             except Exception, e:
-                print e
+                print '**** '+ e
 
     def _generate_zip_file ( self, path, version, addonid):
         print "Generate zip file for " + addonid + " " + version
@@ -127,10 +128,17 @@ class Generator:
                 os.rename(self.output_path + addonid + os.path.sep + filename, self.output_path + addonid + os.path.sep + filename + "." + datetime.datetime.now().strftime("%Y%m%d%H%M%S") )
             shutil.move(filename, self.output_path + addonid + os.path.sep + filename)
             shutil.copy(addonid + '/addon.xml', self.output_path + addonid + os.path.sep + 'addon.xml')
-            shutil.copy(addonid + '/icon.png', self.output_path + addonid + os.path.sep + 'icon.png')
-            shutil.copy(addonid + '/fanart.jpg', self.output_path + addonid + os.path.sep + 'fanart.jpg')
+            try:
+                shutil.copy(addonid + '/icon.png', self.output_path + addonid + os.path.sep + 'icon.png')
+            except:
+                print '**** Icon file missing for ' + addonid
+            try:
+                shutil.copy(addonid + '/fanart.jpg', self.output_path + addonid + os.path.sep + 'fanart.jpg')
+            except:
+                print '**** Fanart file missing for ' + addonid
+
         except Exception, e:
-            print e
+            print '**** ' + e
 
     def _generate_addons_file( self ):
         # addon list
@@ -172,7 +180,7 @@ class Generator:
             self._save_file( m, file=self.output_path + "addons.xml.md5" )
         except Exception, e:
             # oops
-            print "An error occurred creating addons.xml.md5 file!\n%s" % ( e, )
+            print "**** An error occurred creating addons.xml.md5 file!\n%s" % ( e, )
 
     def _save_file( self, data, file ):
         try:
@@ -180,7 +188,7 @@ class Generator:
             open( file, "w" ).write( data )
         except Exception, e:
             # oops
-            print "An error occurred saving %s file!\n%s" % ( file, e, )
+            print "**** An error occurred saving %s file!\n%s" % ( file, e, )
 
 if ( __name__ == "__main__" ):
     # start
