@@ -28,9 +28,9 @@ import sys
 AddonID             = xbmcaddon.Addon().getAddonInfo('id')
 THISADDON           = xbmcaddon.Addon(id=AddonID)
 ADDON_ID            = xbmcaddon.Addon().getAddonInfo('id')
-URL                 = base64.b64decode(b'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL211YWRkaWJ0dHYvbGVnZW5kc2FkZG9uL21hc3Rlci9tZW51Lw==')
+URL                 = base64.b64decode(b'aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL211YWRkaWJ0dHYvdGFudHJ1bXhtbHMvbWFzdGVyL2xlZ2VuZHMvbWVudS8=')
 ADDONTITLE          = base64.b64decode(b'TGVnZW5kcw==')
-USER_AGENT          = base64.b64decode(b'VGFudHJ1bUFkZG9uQWdlbnQ=')
+USER_AGENT          = base64.b64decode(b'TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgNi4xOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNDAuMC4yMjE0Ljg1IFNhZmFyaS81MzcuMzY=')
 #######################################################################
 
 #######################################################################

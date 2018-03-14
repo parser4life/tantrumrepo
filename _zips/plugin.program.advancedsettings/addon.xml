@@ -8,7 +8,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
-        <summary>Create, view, edit and delete your advancedsettings.xml file in a user-friendly gui</summary>
+        <summary>For Kodi 16: Create, view, edit and delete your advancedsettings.xml file in a user-friendly gui</summary>
         <description>All settings follow the xbmc.org wiki[CR][CR]With this tool you can create your advanced settings directly from XBMC[CR][CR]If you don't know what a setting does, don't enable it!</description>
         <platform>all</platform>
         <language>en</language>

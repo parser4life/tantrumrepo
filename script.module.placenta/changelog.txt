@@ -1,6 +1,11 @@
 Placenta Module Changelog:
 Currently maintained by mr blamo and Muad'Dib
 
+ver 1.2.5
+    - Fixed typo involving Season 0 Display/Hide
+
+ver 1.2.4
+
 ver 1.2.3
     - Scraper Updates
     - Updated CFScrape to latest from author
