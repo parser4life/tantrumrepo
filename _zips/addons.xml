@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.audio.jbuddentv" name="Joe Budden TV" version="1.0.0" provider-name="MuadDib">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="plugin.video.youtube"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">The official Joe Budden TV Channel - Create Without Fear</summary>
+        <description lang="en">The Joe Budden Podcasts and More from the official Joe Budden Channel. Keep up to date on music releases, podcasts, live events, and much more!</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+		<platform>all</platform>
+		<license>Beerware rev. 42</license>
+        <forum>http://www.tantrumtv.com</forum>
+        <website>http://www.tantrumtv.com</website>
+        <source></source>
+        <news>Content is constantly updated, without the need for addon updates.</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.audio.legendshonor" name="Legends" version="0.0.5" provider-name="MuadDib">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>

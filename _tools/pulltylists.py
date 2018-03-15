@@ -9,7 +9,7 @@ class Generator:
         # create initial variables needed later
         self.htmlFilename = 'ytplaylistpage.txt'
         self.tools_path = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__))))
-        self.fanart = 'https://raw.githubusercontent.com/muaddibttv/tantrumxmls/master/smpodcast/fanart.jpg'
+        self.fanart = 'https://raw.githubusercontent.com/muaddibttv/tantrumxmls/master/jbuddentv/media/fanart.jpg'
 
         # generate files
         self._generate_yt_templates()
