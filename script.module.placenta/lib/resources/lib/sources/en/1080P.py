@@ -12,12 +12,12 @@
 # Addon id: plugin.video.placenta
 # Addon Provider: MuadDib
 
-
 import re,traceback,urllib,urlparse,json,base64
 
 from resources.lib.modules import cleantitle
 from resources.lib.modules import client
 from resources.lib.modules import directstream
+from resources.lib.modules import log_utils
 from resources.lib.modules import source_utils
 
 class source:

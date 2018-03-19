@@ -1,6 +1,14 @@
 Placenta Module Changelog:
 Currently maintained by mr blamo and Muad'Dib
 
+ver 1.2.7
+    - Default moderator added
+    - Notification window added to Moderator when unknown screen or plugin accessing Placenta
+    - Couple scraper updates
+
+ver 1.2.6
+    - Adeed Wraith as a moderator
+
 ver 1.2.5
     - Fixed typo involving Season 0 Display/Hide
 

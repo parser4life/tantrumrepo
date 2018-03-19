@@ -76,11 +76,11 @@ class source:
             hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
 
             query = '%s S%02dE%02d' % (data['tvshowtitle'], int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else '%s %s' % (data['title'], data['year'])
-            query = re.sub('(\\\|/| -|:|;|\*|\?|"|\'|<|>|\|)', ' ', query)
+            query = re.sub('(\\\|/| -|:|;|\*|\?|"|<|>|\|)', ' ', query).replace('\'', '')
 
             url = self.search_link % urllib.quote_plus(query)
             url = urlparse.urljoin(self.base_link, url)
-
+            log_utils.log('2DDL - sources - url: ' + str(url))
             html = client.request(url)
             url_list = re.compile('<h2><a href="([^"]+)"',re.DOTALL).findall(html)
 
