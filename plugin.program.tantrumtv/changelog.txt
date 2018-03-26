@@ -1,3 +1,7 @@
+v3.1.2
+Fixed issue with Fresh Start causing Wizard errors after complete
+Updated Youtube Daily Limit fix to use internal settings rather than XML replacement
+
 v3.0.3
 Fixed the Force Addon Update option (Derka derk)
 

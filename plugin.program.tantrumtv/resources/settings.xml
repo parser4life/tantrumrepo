@@ -23,7 +23,7 @@
 		<setting id="apk" type="bool" label="[COLOR snow][B]Enable [/B][/COLOR][COLOR red][B]Apk [/B][/COLOR][COLOR snow][B]Menu[/B][/COLOR] " enable="true" default="true"/>
         <setting id="developer" type="bool" label="[COLOR snow][B]Enable [/B][/COLOR][COLOR red][B]Developer [/B][/COLOR][COLOR snow][B]Menu[/B][/COLOR]" enable="true" default="false" />       
         <setting id="fixes" type="bool" label="[COLOR snow][B]Enable [/B][/COLOR][COLOR red][B]Fixes and Tweaks [/B][/COLOR][COLOR snow][B]Menu[/B][/COLOR]" enable="true" default="true" />       
-        <setting id="theme" type="bool" label="[COLOR snow][B]Enable [/B][/COLOR][COLOR red][B]Themes [/B][/COLOR][COLOR snow][B]Menu[/B][/COLOR]" enable="true" default="false" />
+        <setting id="theme" type="bool" label="[COLOR snow][B]Enable [/B][/COLOR][COLOR red][B]Themes [/B][/COLOR][COLOR snow][B]Menu[/B][/COLOR]" enable="true" default="false" visible="false"/>
 	</category>
 
     <category label="[COLOR snow][B]Keep Settings[/B][/COLOR]">

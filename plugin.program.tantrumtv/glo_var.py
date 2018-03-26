@@ -13,7 +13,7 @@ URL                 = base64.b64decode(b'aHR0cDovL3JlcG8udGFudHJ1bXR2LmNvbS9kbS9
 ADDONTITLE          = base64.b64decode(b'VGFudHJ1bS5UViBJbnN0YWxsIFdpemFyZA==')
 GROUP_NAME          = base64.b64decode(b'VGFudHJ1bS5UViA=')
 PATH                = base64.b64decode(b'd2l6YXJk')
-EXCLUDES            = [AddonID,'script.module.requests','temp','backupdir']
+EXCLUDES            = [AddonID,'script.module.requests','temp','backupdir','script.module.urllib3','script.module.chardet','script.module.idna','script.module.certifi','repository.tantrumtv']
 UPDATECHECK         = 0
 AUTOUPDATE          = "Yes"
 USER_AGENT          = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3'

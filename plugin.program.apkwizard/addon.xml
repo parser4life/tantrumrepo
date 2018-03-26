@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.program.apkwizard" name="[COLOR springgreen][B]Tantrum[/B][/COLOR] [COLOR snow][B]APK Wizard[/B][/COLOR]" version="0.0.5" provider-name="MuadDib">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.requests" version="2.12.4"/>    
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>program executable</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Welcome to the Tantrum.TV APK Install Wizard</summary>
-    <description lang="en">This Software is designed to give you an easy way to find and install APKs directly to your android device already running Kodi</description>
-    <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
-    <language></language>
-    <platform>all</platform>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    <forum></forum>
-    <website>https://www.facebook.com/groups/1709673909327662/</website>
-    <email></email>
-    <source></source>
-    <news></news>
-    <assets>
-        <icon>resources/art/icon.png</icon>
-        <fanart>resources/art/fanart.jpg</fanart>
-    </assets>
-  </extension>
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>    
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>program executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Welcome to the Tantrum.TV APK Install Wizard</summary>
+        <description lang="en">This Software is designed to give you an easy way to find and install APKs directly to your android device already running Kodi</description>
+        <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
+        <language/>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <forum/>
+        <website>https://www.facebook.com/groups/1709673909327662/</website>
+        <email/>
+        <source/>
+        <news/>
+        <assets>
+            <icon>resources/art/icon.png</icon>
+            <fanart>resources/art/fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>

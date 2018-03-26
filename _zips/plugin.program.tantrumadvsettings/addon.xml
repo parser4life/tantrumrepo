@@ -13,9 +13,9 @@
         <platform>all</platform>
         <language>en</language>
         <license>Beerware rev. 42</license>
-        <forum></forum>
+        <forum/>
         <website>http://www.tantrumtv.com</website>
-        <source></source>
+        <source/>
         <email>muaddib@tantrumtv.com</email>
     </extension>
 </addon>
