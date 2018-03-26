@@ -14,16 +14,16 @@
 </dir>
 
 <dir>
-    <title>[B]True Romance[/B]</title>
-    <link>file://trueromance.xml</link>
-    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/true.jpg</thumbnail>
+    <title>[B]Cheesy Love[/B]</title>
+    <link>file://cheesy.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/tvlovers.jpg</thumbnail>
     <fanart></fanart>
 </dir>
 
 <dir>
-    <title>[B]Twisted Love[/B]</title>
-    <link>file://twistedlove.xml</link>
-    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/twisted.jpg</thumbnail>
+    <title>[B]Forbidden Love[/B]</title>
+    <link>file://forbidden.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/action.jpg</thumbnail>
     <fanart></fanart>
 </dir>
 
@@ -35,9 +35,37 @@
 </dir>
 
 <dir>
+    <title>[B]Top Romance[/B]</title>
+    <link>file://topromance.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/hallmark.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
+    <title>[B]True Romance[/B]</title>
+    <link>file://trueromance.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/true.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
     <title>[B]TV for Lovers[/B]</title>
     <link>file://tv.xml</link>
     <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/tvlovers.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
+    <title>[B]Twisted Love[/B]</title>
+    <link>file://twistedlove.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/twisted.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
+    <title>[B]Unconventional Love Stories[/B]</title>
+    <link>file://uncon.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/action.jpg</thumbnail>
     <fanart></fanart>
 </dir>
 

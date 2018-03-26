@@ -66,7 +66,7 @@
       <setting id="first_run" label="first run" type="bool" default="true" visible="false"/>
       <setting label="Cache Location" id="cache_folder" type="folder" default="special://profile/addon_data/plugin.video.loversforte/"/>
       <setting label="TVDb api key" type="text" id="tvdb_api_key" option="hidden" default="299CC881651149BD" visible="eq(-3,true)"/>
-      <setting label="TMDb api key" type="text" id="tmdb_api_key" option="hidden" default="" visible="eq(-4,true)"/>
+      <setting label="TMDb api key" type="text" id="tmdb_api_key" option="hidden" default="622a98be4ab1593cb294f066daed0b5c" visible="eq(-4,true)"/>
       <setting label="Trakt client id" type="text" id="trakt_api_client_id" option="hidden" default="3c44b5d6028585498b4b740b3fe736408fe9bb15d790025ffd4fb01120f4e0d5" visible="eq(-5,true)"/>
       <setting label="Trakt client secret" type="text" id="trakt_api_client_secret" option="hidden" visible="!eq(-1,true) + eq(-6,true)" default="0a7cf28592da9722e777463943e8d61263bd314ca1aa1fdbc2a7b197aa7278dc"/>
       <setting label="Last.fm api key" type="text" id="lastfm_api_key" option="hidden" default="" visible="eq(-7,true)"/>
