@@ -1,0 +1,69 @@
+#######################################################
+
+<poster>Lover's Forte Main</poster>
+<thumbnail></thumbnail>
+<fanart>special://home/addons/plugin.video.loversforte/fanart.jpg</fanart>
+
+#######################################################
+
+<dir>
+    <title>[B]Action for Lovers[/B]</title>
+    <link>file://action.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/action.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
+    <title>[B]True Romance[/B]</title>
+    <link>file://trueromance.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/true.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
+    <title>[B]Twisted Love[/B]</title>
+    <link>file://twistedlove.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/twisted.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
+    <title>[B]Romantic Comedies[/B]</title>
+    <link>file://romcomedies.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/romantic.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
+    <title>[B]TV for Lovers[/B]</title>
+    <link>file://tv.xml</link>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/tvlovers.jpg</thumbnail>
+    <fanart></fanart>
+</dir>
+
+<dir>
+    <title>[B]Hallmark[/B]</title>
+    <tvmaze>network/50/1</tvmaze>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/hallmark.jpg</thumbnail>
+    <fantart></fantart>
+</dir>
+
+<dir>
+    <title>[B]Lifetime[/B]</title>
+    <tvmaze>network/18/1</tvmaze>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/lifetime.jpg</thumbnail>
+    <fantart></fantart>
+</dir>
+
+<dir>
+    <title>[B]Lifetime Movie Network[/B]</title>
+    <tvmaze>network/232/1</tvmaze>
+    <thumbnail>special://home/addons/plugin.video.loversforte/resources/media/lifetimemovies.jpg</thumbnail>
+    <fantart></fantart>
+</dir>
+
+<plugin>
+    <name>Settings</name>
+    <link>plugin://plugin.video.loversforte/?action=openSettings</link>
+    <thumbnail></thumbnail>
+</plugin>

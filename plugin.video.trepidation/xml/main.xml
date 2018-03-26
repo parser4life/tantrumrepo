@@ -1,0 +1,97 @@
+<dir>
+    <title>[B][COLOR white]Greatest Horror Films Of All Time[/COLOR][/B]</title>
+    <link>file://greatesthits.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/greatest.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Year[/COLOR][/B]</title>
+    <link>file://years.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/years.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Ashy Slashy[/COLOR][/B]</title>
+    <link>file://slaher.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/slasher.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]The Asylum[/COLOR][/B]</title>
+    <link>file://asylum.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/asylum.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Cabin Fever[/COLOR][/B]</title>
+    <link>file://cabin.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/cabin.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Diamonds in the Rough[/COLOR][/B]</title>
+    <link>file://diamonds.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/diamonds.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Goat Ropers[/COLOR][/B]</title>
+    <link>file://goats.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/goats.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Haunted House[/COLOR][/B]</title>
+    <link>file://house.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/house.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Jeepers Creepers[/COLOR][/B]</title>
+    <link>file://jeepers.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/jeepers.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Korean Horror[/COLOR][/B]</title>
+    <link>file://korean.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/korean.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Red Christmas[/COLOR][/B]</title>
+    <link>file://redxmas.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/redxmas.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Seeds of Evil[/COLOR][/B]</title>
+    <link>file://kids.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/kids.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]The Truth[/COLOR][/B]</title>
+    <link>file://truth.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/truth.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Winter is Coming[/COLOR][/B]</title>
+    <link>file://winter.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/winter.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>

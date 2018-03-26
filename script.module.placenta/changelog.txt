@@ -1,6 +1,9 @@
 Placenta Module Changelog:
 Currently maintained by mr blamo and Muad'Dib
 
+ver 1.2.8
+    - Moderator Update
+	
 ver 1.2.7
     - Default moderator added
     - Notification window added to Moderator when unknown screen or plugin accessing Placenta
