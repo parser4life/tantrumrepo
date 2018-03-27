@@ -1,0 +1,117 @@
+<dir>
+    <name>[B][COLOR white]Atrain's Picks[/COLOR][/B]</name>
+    <link>file://atrainspicks.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/atrain.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <name>[B][COLOR white]Christmas[/COLOR][/B]</name>
+    <link>file://cmain.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/christmas.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Easter[/COLOR][/B]</title>
+    <link>file://easter.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/easter.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>  
+
+<dir>
+    <title>[B][COLOR white]Earth Day[/COLOR][/B]</title>
+    <link>file://earth.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/earthday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir> 
+
+<dir>
+    <title>[B][COLOR white]Father's Day[/COLOR][/B]</title>
+    <link>file://father.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/fathersday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <name>[B][COLOR white]Halloween[/COLOR][/B]</name>
+    <link>file://hmain.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/halloween.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Independence Day[/COLOR][/B]</title>
+    <link>file://iday.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/independanceday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir> 
+
+<dir>
+    <title>[B][COLOR white]Labor Day[/COLOR][/B]</title>
+    <link>file://lday.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/laborday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>    
+
+<dir>
+    <title>[B][COLOR white]Mother's Day[/COLOR][/B]</title>
+    <link>file://mother.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/mothersday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>  
+
+<dir>
+    <name>[B][COLOR white]Memorial Day[/COLOR][/B]</name>
+    <link>file://mmain.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/memorialday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]New Year[/COLOR][/B]</title>
+    <link>file://newyear.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/newyearsday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]President's Day[/COLOR][/B]</title>
+    <link>file://pday.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/presidentsday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Saint Patrick's Day[/COLOR][/B]</title>
+    <link>file://spd.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/stpatricksday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Thanksgiving[/COLOR][/B]</title>
+    <link>file://turkey.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/thanksgiving.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <name>[B][COLOR white]Veterans Day[/COLOR][/B]</name>
+    <link>file://veteran.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/veteransday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <name>[B][COLOR white]Valentines Day[/COLOR][/B]</name>
+    <link>file://valentines.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/valentinesday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<plugin>
+    <name>[B]Settings[/B]</name>
+    <link>plugin://plugin.video.tistheseason/?action=openSettings</link>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</plugin>

@@ -1,0 +1,27 @@
+<dir>
+    <title>Christmas Family Movies</title>
+    <link>file://cfamilymovies.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/christmas.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>Christmas Cartoon Movies</title>
+    <link>file://ccartoonmovies.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/christmas.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>Network Specials</title>
+    <link>file://cnetwork.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/christmas.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>Adult Christmas Movies</title>
+    <link>file://cadult.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/christmas.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
+</dir>

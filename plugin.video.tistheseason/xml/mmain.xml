@@ -1,0 +1,13 @@
+<dir>
+    <title>[B][COLOR white]War Documentaries[/COLOR][/B]</title>
+    <link>file://wardocus.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/veteransday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/resources/media/veteransfanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>[B][COLOR white]Movies and TV Series[/COLOR][/B]</title>
+    <link>file://warmovtv.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/veteransday.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/resources/media/veteransfanart.jpg</fanart>
+</dir>

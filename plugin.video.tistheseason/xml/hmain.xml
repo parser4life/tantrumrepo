@@ -1,0 +1,39 @@
+#############################################################################
+<poster>Halloween</poster>
+<fanart>special://home/addons/plugin.video.tistheseason/resources/media/halloweenfanart.jpg</fanart>
+#############################################################################
+
+<dir>
+    <title>Halloween Movies</title>
+    <link>file://hmovies.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/halloween.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/resources/media/halloweenfanart.jpg</fanart>
+</dir>
+
+<dir>
+    <name>Halloween Boxsets</name>
+    <link>file://hbox.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/halloween.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/resources/media/halloweenfanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>Hammer Horror</title>
+    <link>file://hhammer.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/halloween.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/resources/media/halloweenfanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>Halloween TV Show Series</title>
+    <link>file://htv.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/halloween.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/resources/media/halloweenfanart.jpg</fanart>
+</dir>
+
+<dir>
+    <title>Kids Halloween Movies</title>
+    <link>file://hkids.xml</link>
+    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/halloween.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.tistheseason/resources/media/halloweenfanart.jpg</fanart>
+</dir>
