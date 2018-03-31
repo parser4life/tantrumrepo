@@ -1,6 +1,10 @@
 Placenta Module Changelog:
 Currently maintained by mr blamo and Muad'Dib
 
+ver 1.2.9
+    - Moderator Update
+	- Pron.tv Scraper added to replace pron
+
 ver 1.2.8
     - Moderator Update
 	

@@ -10,7 +10,7 @@
 
 # Addon Name: Placenta
 # Addon id: plugin.video.placenta
-# Addon Provider: MuadDib
+# Addon Provider: MuadDib, Mr.Blamo
 
 import re,urllib,urlparse,json
 from resources.lib.modules import client
@@ -20,18 +20,20 @@ from resources.lib.modules import source_utils
 class source:
     def __init__(self):
         self.priority = 0
-        self.language = ['it']
-        self.domains = ['pron.ee']
-        self.base_link = 'https://www.pron.ee'
+        self.language = ['en']
+        self.domains = ['pron.tv']
+        self.base_link = 'https://pron.tv'
         self.search_link = '/api/search/%s/?apikey=%s&getmeta=0&query=%s&count=%d&from=%d'
         self.types = ['stream']
-        self.streamLimit = 200
+        self.streamLimit = control.setting('pron.limit')
+        if self.streamLimit == '': self.streamLimit = 100
+        self.streamLimit = int(self.streamLimit)
         self.streamIncrease = 100
         self.api = control.setting('pron.api')
         self.debrid = control.setting('pron.download')
         if self.debrid == 'true': self.types = ['stream', 'download']
-        self.extensions = ['mp4', 'mpg', 'mpeg', 'mp2', 'm4v', 'm2v', 'mkv', 'avi', 'flv', 'asf', '3gp', '3g2', 'wmv', 'mov', 'qt', 'webm', 'vob']
 
+        self.rlsFilter = ['FRENCH', 'LATINO', 'SELF', 'SAMPLE', 'EXTRA']
 
     def movie(self, imdb, title, localtitle, aliases, year):
         try:
@@ -72,6 +74,8 @@ class source:
             data = urlparse.parse_qs(url)
             data = dict([(i, data[i][0]) if data[i] else (i, '') for i in data])
 
+            hdlr = 'S%02dE%02d' % (int(data['season']), int(data['episode'])) if 'tvshowtitle' in data else data['year']
+            
             title = data['tvshowtitle'] if 'tvshowtitle' in data else data['title']
             year = int(data['year']) if 'year' in data and not data['year'] == None else None
             season = int(data['season']) if 'season' in data and not data['season'] == None else None
@@ -95,7 +99,7 @@ class source:
 
             seen_urls = set()
             for type in self.types:
-                searchFrom = 1
+                searchFrom = 0
                 searchCount = self.streamIncrease
                 for offset in range(iterations):
                     if iterations == offset + 1: searchCount = last
@@ -104,7 +108,7 @@ class source:
 
                     results = client.request(urlNew)
                     results = json.loads(results)
-                    
+
                     apistatus  = results['status']
                     if apistatus != 'success': break
 
@@ -118,12 +122,17 @@ class source:
                         jsonLanguage = result['lang']
                         jsonHoster = result['hostername'].lower()
                         jsonLink = result['hosterurls'][0]['url']
+                                                    
+                        if jsonLink in seen_urls: continue
+                        seen_urls.add(jsonLink)
+
+                        if not hdlr in jsonName.upper(): continue
+                                                
+                        if not self.releaseValid(title, jsonName): continue # filter non en releases
 
                         if not jsonHoster in hostDict: continue
 
-                        if not self.extensionValid(jsonExtension): continue
-
-                        if jsonLink in seen_urls: continue
+                        if jsonExtension == 'rar': continue
 
                         quality, info = source_utils.get_release_quality(jsonName)
                         info.append(self.formatSize(jsonSize))
@@ -132,7 +141,6 @@ class source:
 
                         sources.append({'source' : jsonHoster, 'quality':  quality, 'language' : jsonLanguage, 'url' : jsonLink, 'info': info, 'direct' : False, 'debridonly' : False})
                         added = True
-                        seen_urls.add(jsonLink)
 
                     if not added:
                         break
@@ -144,17 +152,19 @@ class source:
     def resolve(self, url):
       return url
 
-    def extensionValid(self, extension):
-        extension = extension.replace('.', '').replace(' ', '').lower()
-        return extension in self.extensions
-
     def formatSize(self, size):
         if size == 0 or size is None: return ''
         size = int(size) / (1024 * 1024)
         if size > 2000:
             size = size / 1024
             unit = 'GB'
-        else :
+        else:
             unit = 'MB'
-        size = "[%s %s]" % (size, unit)
+        size = '[B][%s %s][/B]' % (size, unit)
         return size
+
+    def releaseValid (self, title, release):
+        for unw in self.rlsFilter:
+            if not unw in title.upper() and unw in release.upper():
+                return False
+        return True

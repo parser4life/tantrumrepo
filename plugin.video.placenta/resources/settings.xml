@@ -85,7 +85,7 @@
         <setting id="provider.1080P" type="bool" label="1080P" default="true" />
         <setting id="provider.afdah" type="bool" label="AFDAH" default="false" />
         <setting id="provider.allrls" type="bool" label="ALLRLS" default="true" />
-        <setting id="provider.allucen" type="bool" label="ALLUCEN" default="false" />
+        <setting id="provider.pronen" type="bool" label="PRONEN" default="false" />
         <setting id="provider.bmoviez" type="bool" label="BMOVIEZ" default="true" />
         <setting id="provider.bnwmovies" type="bool" label="BNWMOVIES" default="true" />
         <setting id="provider.bob" type="bool" label="BOB" default="true" />
@@ -109,7 +109,7 @@
         <setting id="provider.phazeddl" type="bool" label="PHAZEDLL" default="true" />
         <setting id="provider.plocker" type="bool" label="PLOCKER" default="true" />
         <setting id="provider.popcorn" type="bool" label="POPCORN" default="true" />
-        <setting id="provider.primewire" type="bool" label="PRIMEWIRE" default="true" />
+        <setting id="provider.primewire" type="bool" label="PRIMEWIRE" default="true" />      
         <setting id="provider.rlsbb" type="bool" label="RLSBB" default="true" />
         <setting id="provider.scenerls" type="bool" label="SCENERLS" default="true" />
         <setting id="provider.series9" type="bool" label="SERIES9" default="true" />
@@ -125,9 +125,9 @@
         <setting id="provider.xmovies" type="bool" label="XMOVIES" default="true" />
         <setting id="provider.xwatchseries" type="bool" label="XWATCHSERIES" default="true" />
         <setting label="Italian" type="lsep" />
-        <setting id="provider.allucit" type="bool" label="ALLUC" default="true" />
+        <setting id="provider.pronit" type="bool" label="PRON" default="true" />
         <setting label="German" type="lsep" />
-        <setting id="provider.allucde" type="bool" label="ALLUC" default="true" />
+        <setting id="provider.pronde" type="bool" label="PRON" default="true" />
         <setting id="provider.animebase" type="bool" label="ANIMEBASE" default="true" />
         <setting id="provider.animeloads" type="bool" label="ANIMELOADS" default="true" />
         <setting id="provider.bs" type="bool" label="BS" default="true" />
@@ -165,7 +165,7 @@
         <setting id="provider.video4k" type="bool" label="VIDEO4K" default="true" />
         <setting id="provider.view4u" type="bool" label="VIEW4U" default="true" />
         <setting label="French" type="lsep" />
-        <setting id="provider.allucfr" type="bool" label="ALLUC" default="true" />
+        <setting id="provider.pronfr" type="bool" label="PRON" default="true" />
         <setting id="provider.cinemay" type="bool" label="CINEMAY" default="true" />
         <setting id="provider.dpstreaming" type="bool" label="DPSTREAMING" default="true" />
         <setting id="provider.filmenstreaminghd" type="bool" label="FILMENSTREAMINGHD" default="true" />
@@ -175,7 +175,7 @@
         <setting id="provider.streamay" type="bool" label="STREAMAY" default="true" />
         <setting id="provider.streamingseries" type="bool" label="STREAMINGSERIES" default="true" />
         <setting label="Polish" type="lsep" />
-        <setting id="provider.allucpl" type="bool" label="ALLUC" default="true" />
+        <setting id="provider.pronpl" type="bool" label="PRON" default="true" />
         <setting id="provider.alltube" type="bool" label="ALLTUBE" default="true" />
         <setting id="provider.filmyto" type="bool" label="FILMYTO" default="true" />
         <setting id="provider.cdax" type="bool" label="CDAX" default="true" />
@@ -252,10 +252,10 @@
         <setting id="seriesever.user" type="text" label="32303" default="" />
         <setting id="seriesever.pass" type="text" option="hidden" label="32307" default="" />
         <setting type="sep" />
-        <setting type="lsep" label="ALLUC" />
-        <setting id="alluc.api" type="text" label="32309" default="" />
-        <setting id="alluc.limit" type="labelenum" label="32581" default="10" values="10|20|30|40|50|60|70|80|90|100|150|200" />
-        <setting id="alluc.download" type="bool" label="32009" default="false" />        
+        <setting type="lsep" label="PRON" />
+        <setting id="pron.api" type="text" label="32309" default="" />
+        <setting id="pron.limit" type="labelenum" label="32581" default="10" values="10|20|30|40|50|60|70|80|90|100|150|200" />
+        <setting id="pron.download" type="bool" label="32009" default="false" />        
     </category>
     <category label="32541">
         <setting id="library.movie" type="folder" label="32543" default="special://userdata/addon_data/plugin.video.placenta/Movies" />
